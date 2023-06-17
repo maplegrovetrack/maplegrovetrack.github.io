@@ -1,0 +1,16 @@
+{
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": [
+    "@nuxtjs/eslint-config-typescript",
+    "@nuxtjs"
+  ],
+  "plugins": [],
+  "rules": {
+    "space-before-function-paren": ["error", "never"],
+    "object-curly-newline": ["error", {
+      "consistent": true
+    }]
+  }
+}
