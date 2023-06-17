@@ -1,6 +1,6 @@
 <template>
   <div>
-    This is the MGTF site.
+    This is the MGTF index site.
   </div>
 </template>
 
