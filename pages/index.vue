@@ -1,9 +1,9 @@
 <template>
   <div>
-    This is the MGTF index site.
+    This site is currently under construction.
   </div>
 </template>
 
 <script setup lang="ts">
-
+useHead({ title: 'Maple Grove Track & Field' })
 </script>

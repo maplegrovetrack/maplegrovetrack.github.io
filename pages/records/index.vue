@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-
+useHead({ title: 'Records' })
 </script>
