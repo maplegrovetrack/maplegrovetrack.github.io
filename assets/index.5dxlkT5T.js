@@ -1,0 +1,1 @@
+import{u as e}from"./vue.f36acd1f.IWXSMDf3.js";import{d as t,v as o,t as r}from"./entry.ZAQt9uW-.js";const d=t({__name:"index",setup(s){return e({title:"Records"}),(n,a)=>(r(),o("div",null," This is the MGTF records. "))}});export{d as default};
