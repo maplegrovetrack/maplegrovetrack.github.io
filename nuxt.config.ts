@@ -4,9 +4,6 @@ const isProduction: boolean = process.env.NODE_ENV === 'production'
 const isDevelopment: boolean = process.env.NODE_ENV === 'development'
 
 export default defineNuxtConfig({
-  features: {
-    inlineStyles: true
-  },
   build: {
     transpile: [
       ...(isProduction ? ['naive-ui'] : []),
@@ -21,8 +18,7 @@ export default defineNuxtConfig({
       include: [
         ...(isDevelopment ? ['naive-ui'] : []),
         ...(isDevelopment ? ['vueuc'] : []),
-        ...(isDevelopment ? ['date-fns-tz/formatInTimeZone'] : []),
-        ...(isDevelopment ? ['lodash-es'] : [])
+        ...(isDevelopment ? ['date-fns-tz/formatInTimeZone'] : [])
       ]
     }
   }
