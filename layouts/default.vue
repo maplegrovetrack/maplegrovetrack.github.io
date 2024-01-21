@@ -1,7 +1,12 @@
 <template>
-  <div>
-    <slot />
-  </div>
+  <NConfigProvider :theme-overrides="darkTheme">
+    <GlobalStyle>
+      <!--      <ClientOnly>-->
+      <!--        <NMenu :options="menuOptions" mode="horizontal" responsive />-->
+      <!--      </ClientOnly>-->
+      <slot />
+    </GlobalStyle>
+  </NConfigProvider>
   <!--  <NSpace vertical>-->
   <!--    <NSpace>-->
   <!--      <NButton @click="theme = darkTheme">Dark</NButton>-->
@@ -18,20 +23,20 @@
 </template>
 
 <script setup lang="ts">
-// import type { MenuOption } from 'naive-ui'
-// import { darkTheme, NConfigProvider, NGlobalStyle } from 'naive-ui'
-// import { NuxtLink } from '#components'
-//
-// const menuOptions: MenuOption[] = [
-//   {
-//     label: () =>
-//       h(
-//         NuxtLink,
-//         {
-//           to: '/'
-//         }
-//       ),
-//     key: 'Home'
-//   }
-// ]
+import type { MenuOption } from 'naive-ui'
+import { darkTheme, NConfigProvider, NMenu } from 'naive-ui'
+import { NuxtLink } from '#components'
+
+const menuOptions: MenuOption[] = [
+  {
+    label: () =>
+      h(
+        NuxtLink,
+        {
+          to: '/'
+        }
+      ),
+    key: 'Home'
+  }
+]
 </script>

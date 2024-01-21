@@ -21,7 +21,8 @@ export default defineNuxtConfig({
       include: [
         ...(isDevelopment ? ['naive-ui'] : []),
         ...(isDevelopment ? ['vueuc'] : []),
-        ...(isDevelopment ? ['date-fns-tz/formatInTimeZone'] : [])
+        ...(isDevelopment ? ['date-fns-tz/formatInTimeZone'] : []),
+        ...(isDevelopment ? ['lodash-es'] : [])
       ]
     }
   }
