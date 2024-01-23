@@ -6,25 +6,27 @@
     "deploy": "gh-pages -d dist --dotfiles",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.ts,.vue .",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@fontsource/roboto": "^5.0.8",
-    "@mdi/font": "^7.4.47",
+    "@iconify-json/heroicons": "^1.1.19",
+    "@iconify-json/simple-icons": "^1.1.89",
+    "@nuxt/content": "^2.11.0",
+    "@nuxt/ui": "^2.12.3",
+    "@nuxt/ui-pro": "^0.7.3",
     "@nuxtjs/eslint-config": "^12.0.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@pinia/nuxt": "^0.5.1",
     "@types/node": "^20",
-    "@vueuse/core": "^10.7.2",
-    "@vueuse/nuxt": "^10.7.2",
     "eslint": "^8.56.0",
     "gh-pages": "^6.1.1",
     "nuxt": "^3.9.3",
     "pinia": "^2.1.7",
-    "sass": "^1.70.0",
-    "vite-plugin-vuetify": "^2.0.1",
-    "vue": "^3.4.15",
-    "vuetify": "^3.5.1"
+    "sass": "^1.70.0"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }
