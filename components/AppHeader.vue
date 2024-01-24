@@ -5,7 +5,8 @@
         <UColorModeImage v-bind="{ class: 'h-6 w-auto', ...header?.logo }" />
       </template>
       <template v-else>
-        Nuxt UI Pro <UBadge label="Docs" variant="subtle" class="mb-0.5" />
+        Nuxt UI Pro
+        <UBadge label="Docs" variant="subtle" class="mb-0.5" />
       </template>
     </template>
 
@@ -34,7 +35,9 @@
 </template>
 
 <script setup lang="ts">
-const navigation = await useAppNavigation()
+import type { NavItem } from '@nuxt/content/dist/runtime/types'
+
+const navigation = inject<NavItem[]>('navigation', [])
 
 const { header } = useAppConfig()
 </script>

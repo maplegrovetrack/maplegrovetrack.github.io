@@ -12,5 +12,7 @@
 </template>
 
 <script setup lang="ts">
-const navigation = await useAppNavigation()
+import type { NavItem } from '@nuxt/content/dist/runtime/types'
+
+const navigation = inject<NavItem[]>('navigation', [])
 </script>

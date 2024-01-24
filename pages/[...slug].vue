@@ -10,7 +10,7 @@
       <UDocsSurround :surround="surround" />
     </UPageBody>
 
-    <template v-if="page.toc !== false" #right>
+    <template v-if="page?.toc !== false" #right>
       <UDocsToc :title="toc?.title" :links="page.body?.toc?.links">
         <template v-if="toc?.bottom" #bottom>
           <div class="hidden lg:block space-y-6" :class="{ '!mt-6': page.body?.toc?.links?.length }">
@@ -33,14 +33,14 @@ definePageMeta({
 })
 
 const route = useRoute()
-const { toc, seo } = useAppConfig()
+const { toc } = useAppConfig()
 
 const { data: page } = await useAsyncData<ParsedContent>(route.path, () => queryContent(route.path).findOne())
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryContent()
+const { data: surround } = await useAsyncData<Pick<ParsedContent, string>[]>(`${route.path}-surround`, () => queryContent()
   .where({ _extension: 'md', navigation: { $ne: false } })
   .only(['title', 'description', '_path'])
   .findSurround(withoutTrailingSlash(route.path))

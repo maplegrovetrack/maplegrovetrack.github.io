@@ -1,3 +1,5 @@
+import type { Component } from '@nuxt/schema'
+
 export default defineNuxtConfig({
   content: {},
   devtools: {
@@ -15,17 +17,18 @@ export default defineNuxtConfig({
   },
   hooks: {
     // Define `@nuxt/ui` components as global to use them in `.md`
-    'components:extend': (components) => {
-      const include = ['UAlert']
-      const globals = components.filter(c => include.includes(c.pascalName))
+    'components:extend': (components: Component[]): void => {
+      const include: string[] = ['UAlert']
+      const globals: Component[] = components.filter(c => include.includes(c.pascalName))
 
-      globals.forEach((c) => { c.global = true })
+      globals.forEach((c: Component) => {
+        c.global = true
+      })
     }
   },
   modules: [
     '@nuxt/content',
     '@nuxtjs/google-fonts',
-    '@pinia/nuxt',
     '@nuxt/ui'
   ],
   routeRules: {
@@ -35,6 +38,6 @@ export default defineNuxtConfig({
     icons: ['heroicons', 'simple-icons']
   },
   typescript: {
-    strict: true
+    strict: false
   }
 })

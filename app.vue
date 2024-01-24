@@ -11,7 +11,7 @@
     <AppFooter />
 
     <ClientOnly>
-      <LazyUDocsSearch :files="files as ParsedContent[]" :navigation="navigation" />
+      <LazyUDocsSearch :files="files" :navigation="navigation" />
     </ClientOnly>
 
     <UNotifications />
@@ -19,24 +19,13 @@
 </template>
 
 <script setup lang="ts">
-import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
+import type { NavItem, ParsedContent } from '@nuxt/content/dist/runtime/types'
 
-const navigation = await useAppNavigation()
-
-const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {
-  default: () => [] as ParsedContent[],
+const { data: navigation } = await useAsyncData<NavItem[]>('navigation', () => fetchContentNavigation())
+const { data: files } = await useLazyFetch<ParsedContent[]>('/api/search.json', {
+  default: () => [],
   server: false
 })
 
-useHead({
-  meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-  ],
-  link: [
-    { rel: 'icon', href: '/favicon.ico' }
-  ],
-  htmlAttrs: {
-    lang: 'en'
-  }
-})
+provide('navigation', navigation)
 </script>
