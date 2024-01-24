@@ -2,6 +2,7 @@ import type { Component } from '@nuxt/schema'
 
 export default defineNuxtConfig({
   content: {},
+  css: ['assets/main.css'],
   devtools: {
     enabled: true
   },
