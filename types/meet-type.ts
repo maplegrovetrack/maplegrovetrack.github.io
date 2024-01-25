@@ -7,6 +7,7 @@ export enum MeetType {
 }
 
 export type Meet = {
+  id: string,
   name: string,
   date: Date,
   location: Schools,

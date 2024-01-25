@@ -2,7 +2,12 @@
   <UHeader>
     <template #logo>
       <template v-if="header?.logo?.dark || header?.logo?.light">
-        <UColorModeImage v-bind="{ class: 'h-6 w-auto', ...header?.logo }" />
+        <div class="flex items-center gap-2">
+          <UColorModeImage v-bind="{ class: 'h-16 w-auto', ...header?.logo }" />
+          <div class="w-40 md:w-auto lg:w-80">
+            Maple Grove Track & Field
+          </div>
+        </div>
       </template>
       <template v-else>
         Nuxt UI Pro
@@ -17,6 +22,7 @@
     <template #right>
       <UDocsSearchButton v-if="header?.search" :label="undefined" class="lg:hidden" />
 
+      <AppColorPicker v-if="header?.colorPicker" />
       <UColorModeButton v-if="header?.colorMode" />
 
       <template v-if="header?.links">

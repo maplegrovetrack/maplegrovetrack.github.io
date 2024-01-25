@@ -14,8 +14,8 @@ const gitHub = {
 
 export default defineAppConfig({
   ui: {
-    primary: 'green',
-    gray: 'cool',
+    primary: 'sandrift',
+    gray: 'vista-white',
     footer: {
       bottom: {
         left: 'text-sm text-gray-500 dark:text-gray-400',
@@ -25,11 +25,13 @@ export default defineAppConfig({
   },
   header: {
     logo: {
-      alt: '',
-      light: '',
-      dark: ''
+      alt: 'Maple Grove Senior High Crimson & Gold Maple Leaf',
+      light: '/logo_leaf.png',
+      dark: '/logo_leaf.png'
     },
     search: true,
+    colorPicker: true,
+    colorPickerColors: ['vista-white', 'red', 'rose', 'old-rose', 'falu-red', 'sandrift'],
     colorMode: true,
     links: [x, gitHub]
   },

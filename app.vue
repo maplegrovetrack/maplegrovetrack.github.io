@@ -1,21 +1,19 @@
 <template>
-  <div>
-    <AppHeader />
+  <AppHeader />
 
-    <UMain>
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
-    </UMain>
+  <UMain>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </UMain>
 
-    <AppFooter />
+  <AppFooter />
 
-    <ClientOnly>
-      <LazyUDocsSearch :files="files" :navigation="navigation" />
-    </ClientOnly>
+  <ClientOnly>
+    <LazyUDocsSearch :files="files" :navigation="navigation" />
+  </ClientOnly>
 
-    <UNotifications />
-  </div>
+  <UNotifications />
 </template>
 
 <script setup lang="ts">
@@ -25,6 +23,15 @@ const { data: navigation } = await useAsyncData<NavItem[]>('navigation', () => f
 const { data: files } = await useLazyFetch<ParsedContent[]>('/api/search.json', {
   default: () => [],
   server: false
+})
+
+const colorMode = useColorMode()
+const color = computed(() => colorMode.value === 'dark' ? 'green' : 'white')
+
+useHead({
+  meta: [
+    { key: 'theme-color', name: 'theme-color', content: color }
+  ]
 })
 
 provide('navigation', navigation)
