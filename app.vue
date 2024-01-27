@@ -25,14 +25,5 @@ const { data: files } = await useLazyFetch<ParsedContent[]>('/api/search.json', 
   server: false
 })
 
-const colorMode = useColorMode()
-const color = computed(() => colorMode.value === 'dark' ? 'green' : 'white')
-
-useHead({
-  meta: [
-    { key: 'theme-color', name: 'theme-color', content: color }
-  ]
-})
-
 provide('navigation', navigation)
 </script>

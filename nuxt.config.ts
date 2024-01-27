@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     fallback: 'dark'
   },
   content: {},
-  css: ['assets/main.css'],
+  css: ['assets/calendar.scss'],
   devtools: {
     enabled: true
   },
