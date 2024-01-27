@@ -17,6 +17,15 @@
               {{ meet.start.hour }}:{{ meet.start.minute }} {{ meet.start.meridiem }} -
               {{ meet.end.hour }}:{{ meet.end.minute }} {{ meet.end.meridiem }}
             </div>
+            <div class="flex items-center gap-1.5">
+              <UIcon name="i-heroicons-map-pin" class="w-5 h-5 flex-shrink-0" />
+              <div class="flex items-center">
+                <div>{{ meet.location.name }}</div>
+                <div class="w-5 h-5 ml-1">
+                  <img class="not-prose" :src="meet.location.logo" :alt="meet.location.name">
+                </div>
+              </div>
+            </div>
           </div>
           <div class="space-y-3">
             Testing 1 2 3...

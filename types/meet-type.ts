@@ -1,4 +1,4 @@
-import type { Schools } from '~/types/schools'
+import type { School } from '~/types/schools'
 
 export enum MeetType {
   VARSITY = 'Varsity',
@@ -10,8 +10,8 @@ export type Meet = {
   id: string,
   name: string,
   date: Date,
-  location: Schools,
-  schools: Schools[],
+  location: School,
+  schools: School[],
   type: MeetType,
   start: {
     hour: string,

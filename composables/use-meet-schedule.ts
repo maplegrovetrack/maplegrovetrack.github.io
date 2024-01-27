@@ -1,15 +1,16 @@
 import type { Meet } from '~/types/meet-type'
 import { MeetType } from '~/types/meet-type'
-import { Schools } from '~/types/schools'
+import { useSchools } from '~/composables/use-schools'
 
 export const useMeetSchedule = (): Meet[] => {
+  const schools = useSchools()
   return [
     {
       id: '3_2_2024_mg_blaine',
       name: 'Blaine Dual Meet',
       date: new Date(2024, 3, 2),
-      location: Schools.MG,
-      schools: [Schools.MG, Schools.BLAINE],
+      location: schools.MG,
+      schools: [schools.MG, schools.BLAINE],
       type: MeetType.ALL,
       start: {
         hour: '3',
