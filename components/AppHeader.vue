@@ -43,7 +43,7 @@
 <script setup lang="ts">
 import type { NavItem } from '@nuxt/content/dist/runtime/types'
 
-const navigation = inject<NavItem[]>('navigation', [])
+const navigation: NavItem[] = await useNavigation()
 
 const { header } = useAppConfig()
 </script>
