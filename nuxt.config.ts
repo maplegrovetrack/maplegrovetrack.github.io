@@ -1,8 +1,11 @@
 import type { Component } from '@nuxt/schema'
 
 export default defineNuxtConfig({
+  colorMode: {
+    fallback: 'dark'
+  },
   content: {},
-  css: ['assets/main.css'],
+  css: ['assets/calendar.scss'],
   devtools: {
     enabled: true
   },

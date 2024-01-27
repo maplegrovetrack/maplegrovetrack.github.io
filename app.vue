@@ -1,21 +1,19 @@
 <template>
-  <div>
-    <AppHeader />
+  <AppHeader />
 
-    <UMain>
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
-    </UMain>
+  <UMain>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </UMain>
 
-    <AppFooter />
+  <AppFooter />
 
-    <ClientOnly>
-      <LazyUDocsSearch :files="files" :navigation="navigation" />
-    </ClientOnly>
+  <ClientOnly>
+    <LazyUDocsSearch :files="files" :navigation="navigation" />
+  </ClientOnly>
 
-    <UNotifications />
-  </div>
+  <UNotifications />
 </template>
 
 <script setup lang="ts">
