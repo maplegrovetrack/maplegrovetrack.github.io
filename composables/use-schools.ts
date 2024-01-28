@@ -7,7 +7,7 @@ export const useSchools = (): Record<SchoolKey, School> => ({
   PC: { name: 'Park Center', logo: '' },
   CP: { name: 'Champlin Park', logo: '' },
   ARMSTRONG: { name: 'Armstrong', logo: '' },
-  ANOKA: { name: 'Anoka', logo: '' },
+  ANOKA: { name: 'Anoka', logo: '/anoka.png' },
   STM: { name: 'St. Michael-Albertville', logo: '' },
   ROGERS: { name: 'Rogers', logo: '/rogers.png' },
   ANDOVER: { name: 'Andover', logo: '' },
@@ -18,5 +18,6 @@ export const useSchools = (): Record<SchoolKey, School> => ({
   WAYZATA: { name: 'Wayzata', logo: '' },
   ROSEVILLE: { name: 'Roseville', logo: '' },
   CR: { name: 'Coon Rapids', logo: '/coon_rapids.png' },
-  MINNETONKA: { name: 'Minnetonka', logo: '/minnetonka.png' }
+  MINNETONKA: { name: 'Minnetonka', logo: '/minnetonka.png' },
+  SLP: { name: 'Spring Lake Park', logo: '/slp.png' }
 })
