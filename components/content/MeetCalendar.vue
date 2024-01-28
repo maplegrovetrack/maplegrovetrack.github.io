@@ -21,7 +21,7 @@
               <UIcon name="i-heroicons-map-pin" class="w-5 h-5" />
               <div class="flex items-center">
                 <div>{{ meet.location.name }}</div>
-                <div class="w-5 h-5 ml-1">
+                <div class="flex items-center w-5 h-5 ml-1">
                   <img class="not-prose" :src="meet.location.logo" :alt="meet.location.name">
                 </div>
               </div>
@@ -32,7 +32,7 @@
               <div class="flex mt-0.5">
                 <UIcon name="i-heroicons-academic-cap" class="w-5 h-5" />
               </div>
-              <div class="flex flex-wrap items-center">
+              <div class="flex flex-wrap items-center" v-if="meet.schools.length > 0">
                 <div v-for="(school, index) in meet.schools" :key="index" class="flex items-center">
                   <div>{{ school.name }}</div>
                   <div class="flex items-center w-5 h-5 ml-1">
@@ -42,6 +42,9 @@
                     |
                   </div>
                 </div>
+              </div>
+              <div v-else class="flex items-center">
+                TBD
               </div>
             </div>
             <div class="flex items-center gap-2">

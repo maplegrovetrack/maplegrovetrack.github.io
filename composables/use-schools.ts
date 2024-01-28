@@ -17,5 +17,6 @@ export const useSchools = (): Record<SchoolKey, School> => ({
   CENTENNIAL: { name: 'Centennial', logo: '' },
   WAYZATA: { name: 'Wayzata', logo: '' },
   ROSEVILLE: { name: 'Roseville', logo: '' },
-  CR: { name: 'Coon Rapids', logo: '/coon_rapids.png' }
+  CR: { name: 'Coon Rapids', logo: '/coon_rapids.png' },
+  MINNETONKA: { name: 'Minnetonka', logo: '/minnetonka.png' }
 })

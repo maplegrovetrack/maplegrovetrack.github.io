@@ -59,6 +59,24 @@ export const useMeetSchedule = (): Meet[] => {
         minute: '00',
         meridiem: 'PM'
       }
+    },
+    {
+      id: '4_23_2024_quad_meet',
+      name: 'Minnetonka Invite',
+      date: new Date(2024, 3, 23),
+      location: schools.MINNETONKA,
+      schools: [],
+      type: MeetType.VARSITY,
+      start: {
+        hour: '3',
+        minute: '00',
+        meridiem: 'PM'
+      },
+      end: {
+        hour: '8',
+        minute: '00',
+        meridiem: 'PM'
+      }
     }
   ]
 }

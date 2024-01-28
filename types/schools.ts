@@ -4,4 +4,4 @@ export type School = {
 }
 
 export type SchoolKey = 'MG' | 'BLAINE' | 'OSSEO' | 'PC' | 'CP' | 'ARMSTRONG' | 'ANOKA' | 'STM' | 'ROGERS' |
-  'ANDOVER' | 'EK' | 'IRONDALE' | 'MV' | 'CENTENNIAL' | 'WAYZATA' | 'ROSEVILLE' | 'CR'
+  'ANDOVER' | 'EK' | 'IRONDALE' | 'MV' | 'CENTENNIAL' | 'WAYZATA' | 'ROSEVILLE' | 'CR' | 'MINNETONKA'
