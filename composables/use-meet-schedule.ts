@@ -7,7 +7,7 @@ export const useMeetSchedule = (): Meet[] => {
   const schools: Record<SchoolKey, School> = useSchools()
   return [
     {
-      id: '4_2_2024_dual_meet',
+      id: '_4_2_2024_dual_meet',
       name: 'Dual Meet',
       date: new Date(2024, 3, 2),
       location: schools.MG,
@@ -25,7 +25,7 @@ export const useMeetSchedule = (): Meet[] => {
       }
     },
     {
-      id: '4_9_2024_triangular_meet',
+      id: '_4_9_2024_triangular_meet',
       name: 'Triangular Meet',
       date: new Date(2024, 3, 9),
       location: schools.MG,
@@ -43,7 +43,7 @@ export const useMeetSchedule = (): Meet[] => {
       }
     },
     {
-      id: '4_16_2024_quad_meet',
+      id: '_4_16_2024_quad_meet',
       name: 'Quad Meet',
       date: new Date(2024, 3, 16),
       location: schools.MG,
@@ -61,7 +61,7 @@ export const useMeetSchedule = (): Meet[] => {
       }
     },
     {
-      id: '4_23_2024_minnetonka_invite',
+      id: '_4_23_2024_minnetonka_invite',
       name: 'Minnetonka Invite',
       date: new Date(2024, 3, 23),
       location: schools.MINNETONKA,
@@ -79,7 +79,7 @@ export const useMeetSchedule = (): Meet[] => {
       }
     },
     {
-      id: '4_25_2024_anoka',
+      id: '_4_25_2024_anoka',
       name: 'Anoka',
       date: new Date(2024, 3, 25),
       location: schools.ANOKA,
@@ -97,7 +97,7 @@ export const useMeetSchedule = (): Meet[] => {
       }
     },
     {
-      id: '4_30_2024_crimson_invite',
+      id: '_4_30_2024_crimson_invite',
       name: 'Crimson Invite',
       date: new Date(2024, 3, 30),
       location: schools.MG,
@@ -115,7 +115,7 @@ export const useMeetSchedule = (): Meet[] => {
       }
     },
     {
-      id: '5_7_2024_osseo_jv',
+      id: '_5_7_2024_osseo_jv',
       name: 'True Team',
       date: new Date(2024, 4, 7),
       location: schools.EK,
