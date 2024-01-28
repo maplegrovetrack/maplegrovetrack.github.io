@@ -14,8 +14,13 @@
             </div>
             <div class="flex items-center gap-2">
               <UIcon name="i-heroicons-clock" class="w-5 h-5" />
-              {{ meet.start.hour }}:{{ meet.start.minute }} {{ meet.start.meridiem }} -
-              {{ meet.end.hour }}:{{ meet.end.minute }} {{ meet.end.meridiem }}
+              <div v-if="meet.start && meet.end">
+                {{ meet.start.hour }}:{{ meet.start.minute }} {{ meet.start.meridiem }} -
+                {{ meet.end.hour }}:{{ meet.end.minute }} {{ meet.end.meridiem }}
+              </div>
+              <div v-else>
+                TBD
+              </div>
             </div>
             <div class="flex items-center gap-2">
               <UIcon name="i-heroicons-map-pin" class="w-5 h-5" />
@@ -32,7 +37,7 @@
               <div class="flex mt-0.5">
                 <UIcon name="i-heroicons-academic-cap" class="w-5 h-5" />
               </div>
-              <div class="flex flex-wrap items-center" v-if="meet.schools.length > 0">
+              <div v-if="meet.schools.length > 0" class="flex flex-wrap items-center">
                 <div v-for="(school, index) in meet.schools" :key="index" class="flex items-center">
                   <div>{{ school.name }}</div>
                   <div class="flex items-center w-5 h-5 ml-1">

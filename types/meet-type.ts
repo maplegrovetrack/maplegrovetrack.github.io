@@ -14,12 +14,12 @@ export type Meet = {
   schools: School[],
   type: MeetType,
   transport?: string,
-  start: {
+  start?: {
     hour: string,
     minute: string,
     meridiem: string
   },
-  end: {
+  end?: {
     hour: string,
     minute: string,
     meridiem: string

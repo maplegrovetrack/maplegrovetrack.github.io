@@ -68,7 +68,7 @@ export const useMeetSchedule = (): Meet[] => {
       schools: [],
       type: MeetType.VARSITY,
       start: {
-        hour: '3',
+        hour: '4',
         minute: '00',
         meridiem: 'PM'
       },
@@ -84,7 +84,7 @@ export const useMeetSchedule = (): Meet[] => {
       date: new Date(2024, 3, 25),
       location: schools.ANOKA,
       schools: [schools.BLAINE, schools.ANOKA, schools.OSSEO, schools.SLP],
-      type: MeetType.VARSITY,
+      type: MeetType.JV,
       start: {
         hour: '3',
         minute: '00',
@@ -95,6 +95,32 @@ export const useMeetSchedule = (): Meet[] => {
         minute: '00',
         meridiem: 'PM'
       }
+    },
+    {
+      id: '4_30_2024_crimson_invite',
+      name: 'Crimson Invite',
+      date: new Date(2024, 3, 30),
+      location: schools.MG,
+      schools: [],
+      type: MeetType.VARSITY,
+      start: {
+        hour: '3',
+        minute: '30',
+        meridiem: 'PM'
+      },
+      end: {
+        hour: '8',
+        minute: '00',
+        meridiem: 'PM'
+      }
+    },
+    {
+      id: '5_7_2024_osseo_jv',
+      name: 'True Team',
+      date: new Date(2024, 4, 7),
+      location: schools.EK,
+      schools: [],
+      type: MeetType.VARSITY
     }
   ]
 }
