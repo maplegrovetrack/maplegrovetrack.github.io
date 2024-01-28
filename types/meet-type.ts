@@ -13,6 +13,7 @@ export type Meet = {
   location: School,
   schools: School[],
   type: MeetType,
+  transport?: string,
   start: {
     hour: string,
     minute: string,
