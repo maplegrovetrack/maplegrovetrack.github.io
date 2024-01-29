@@ -6,7 +6,7 @@ export const useSchools = (): Record<SchoolKey, School> => ({
   OSSEO: { name: 'Osseo', logo: '/osseo.png' },
   PC: { name: 'Park Center', logo: '/park_center.png' },
   CP: { name: 'Champlin Park', logo: '/champlin_park.png' },
-  ARMSTRONG: { name: 'Armstrong', logo: '' },
+  ARMSTRONG: { name: 'Armstrong', logo: '/armstrong.png' },
   ANOKA: { name: 'Anoka', logo: '/anoka.png' },
   STMA: { name: 'St. Michael-Albertville', logo: '/stma.png' },
   ROGERS: { name: 'Rogers', logo: '/rogers.png' },
@@ -14,10 +14,11 @@ export const useSchools = (): Record<SchoolKey, School> => ({
   EK: { name: 'Elk River', logo: '/elk_river.png' },
   IRONDALE: { name: 'Irondale', logo: '' },
   MV: { name: 'Mounds View', logo: '' },
-  CENTENNIAL: { name: 'Centennial', logo: '' },
+  CENTENNIAL: { name: 'Centennial', logo: '/centennial.svg' },
   WAYZATA: { name: 'Wayzata', logo: '' },
   ROSEVILLE: { name: 'Roseville', logo: '' },
   CR: { name: 'Coon Rapids', logo: '/coon_rapids.png' },
   MINNETONKA: { name: 'Minnetonka', logo: '/minnetonka.png' },
-  SLP: { name: 'Spring Lake Park', logo: '/slp.png' }
+  SLP: { name: 'Spring Lake Park', logo: '/slp.png' },
+  TG: { name: 'Totino-Grace', logo: '/totino_grace.png' }
 })
