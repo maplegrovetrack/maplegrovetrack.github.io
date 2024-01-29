@@ -6,14 +6,17 @@ export enum MeetType {
   ALL = 'Full Team'
 }
 
+export type Transport = 'N/A' | 'TBD'
+
 export type Meet = {
   id: string,
   name: string,
   date: Date,
-  location: School,
+  location?: School,
   schools: School[],
   type: MeetType,
-  transport?: string,
+  transport: Transport,
+  notes?: string,
   start?: {
     hour: string,
     minute: string,
