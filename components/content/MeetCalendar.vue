@@ -26,8 +26,8 @@
               <UIcon name="i-heroicons-map-pin" class="w-5 h-5" />
               <div class="flex items-center">
                 <div>{{ meet.location?.name || 'TBD' }}</div>
-                <div v-if="meet.location" class="flex items-center w-5 h-5 ml-1">
-                  <img class="not-prose" :src="meet.location.logo" :alt="meet.location.name">
+                <div v-if="meet.location" class="flex items-center ml-1">
+                  <img class="not-prose w-auto h-5" :src="meet.location.logo" :alt="meet.location.name">
                 </div>
               </div>
             </div>
@@ -56,7 +56,7 @@
             <div v-if="meet.schools.length > 0" class="flex flex-wrap items-center">
               <div v-for="(school, index) in meet.schools" :key="index" class="flex items-center gap-1">
                 <div>{{ school.name }}</div>
-                <img class="not-prose w-5 h-5" :src="school.logo" :alt="school.name">
+                <img class="not-prose w-auto h-5" :src="school.logo" :alt="school.name">
                 <div v-if="!isLast(meet.schools, index)" class="ml-1 mr-2">
                   |
                 </div>

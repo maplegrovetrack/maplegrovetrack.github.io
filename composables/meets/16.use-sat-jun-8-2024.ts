@@ -9,7 +9,7 @@ export const useSatJun82024 = (): Meet => {
     id: '__6-8-2024__',
     name: 'State Championships - Finals',
     date: new Date(2024, 5, 8),
-    location: schools.STM,
+    location: schools.STMA,
     schools: [],
     transport: 'TBD',
     type: MeetType.VARSITY,

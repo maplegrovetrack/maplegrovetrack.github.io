@@ -10,7 +10,17 @@ export const useWedMay72024 = (): Meet => {
     name: 'True Team',
     date: new Date(2024, 4, 7),
     location: schools.EK,
-    schools: [],
+    schools: [
+      schools.MG,
+      schools.ANDOVER,
+      schools.ANOKA,
+      schools.CP,
+      schools.CR,
+      schools.EK,
+      schools.OSSEO,
+      schools.ROGERS,
+      schools.STMA
+    ],
     type: MeetType.VARSITY,
     transport: 'TBD',
     notes: 'Top 3 in each event and 1 of each relay.',

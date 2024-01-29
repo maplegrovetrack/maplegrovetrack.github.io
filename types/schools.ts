@@ -3,5 +3,5 @@ export type School = {
   logo: string
 }
 
-export type SchoolKey = 'MG' | 'BLAINE' | 'OSSEO' | 'PC' | 'CP' | 'ARMSTRONG' | 'ANOKA' | 'STM' | 'ROGERS' |
+export type SchoolKey = 'MG' | 'BLAINE' | 'OSSEO' | 'PC' | 'CP' | 'ARMSTRONG' | 'ANOKA' | 'STMA' | 'ROGERS' |
   'ANDOVER' | 'EK' | 'IRONDALE' | 'MV' | 'CENTENNIAL' | 'WAYZATA' | 'ROSEVILLE' | 'CR' | 'MINNETONKA' | 'SLP'
