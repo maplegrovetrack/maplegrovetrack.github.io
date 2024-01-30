@@ -34,7 +34,7 @@ definePageMeta({
 
 const route = useRoute()
 const store = useAppStore()
-const { toc } = useAppConfig()
+const { toc, seo } = useAppConfig()
 
 const { data: page } = await useAsyncData<ParsedContent>(route.path, () => queryContent(route.path).findOne())
 if (!page.value) {
@@ -57,4 +57,17 @@ const links = computed(() => [toc?.bottom?.edit && {
   to: `${toc.bottom.edit}/${page?.value?._file}`,
   target: '_blank'
 }, ...(toc?.bottom?.links || [])].filter(Boolean))
+
+useSeoMeta({
+  titleTemplate: `%s - ${seo?.siteName}`,
+  title: page.value.title,
+  ogTitle: `${page.value.title} - ${seo?.siteName}`,
+  description: page.value.description,
+  ogDescription: page.value.description
+})
+
+defineOgImageComponent('Docs', {
+  title: page.value.title,
+  description: page.value.description
+})
 </script>

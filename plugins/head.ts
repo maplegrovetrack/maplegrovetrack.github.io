@@ -1,6 +1,9 @@
-import { defineNuxtPlugin, useHead } from '#imports'
+import { defineNuxtPlugin, useAppConfig, useHead, useSeoMeta } from '#imports'
+import type { AppConfig } from 'nuxt/schema'
 
 export default defineNuxtPlugin((): void => {
+  const config: AppConfig = useAppConfig()
+
   useHead({
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -11,5 +14,10 @@ export default defineNuxtPlugin((): void => {
     htmlAttrs: {
       lang: 'en'
     }
+  })
+
+  useSeoMeta({
+    ogSiteName: config.seo?.siteName,
+    twitterCard: 'summary_large_image'
   })
 })

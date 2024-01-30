@@ -2,6 +2,7 @@ import type { Component } from '@nuxt/schema'
 
 export default defineNuxtConfig({
   colorMode: {
+    preference: 'system',
     fallback: 'dark'
   },
   content: {},
@@ -34,10 +35,14 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/content',
     '@nuxtjs/google-fonts',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    'nuxt-og-image'
   ],
   routeRules: {
     '/api/search.json': { prerender: true }
+  },
+  site: {
+    url: 'https://maplegrovetrack.github.io'
   },
   ui: {
     icons: ['heroicons', 'simple-icons', 'streamline']
