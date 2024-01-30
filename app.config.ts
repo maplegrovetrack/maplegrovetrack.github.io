@@ -13,6 +13,9 @@ const gitHub = {
 }
 
 export default defineAppConfig({
+  seo: {
+    siteName: 'Maple Grove Track & Field',
+  },
   ui: {
     primary: 'falu-red',
     gray: 'stone',

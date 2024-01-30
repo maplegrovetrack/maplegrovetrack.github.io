@@ -18,12 +18,12 @@ export default defineNuxtPlugin(
         const gray: Record<string, string> | undefined = colors[appConfig.ui.gray]
 
         return `:root {
-        ${Object.entries(primary || colors.sandrift).map(([key, value]: string[]): string => {
+        ${Object.entries(primary || colors['falu-red']).map(([key, value]: string[]): string => {
           return `--color-primary-${key}: ${hexToRgb(value)};`
         }).join('\n')}
         --color-primary-DEFAULT: var(--color-primary-500);
 
-        ${Object.entries(gray || colors['vista-white']).map(([key, value]: string[]): string => {
+        ${Object.entries(gray || colors.stone).map(([key, value]: string[]): string => {
           return `--color-gray-${key}: ${hexToRgb(value)};`
         }).join('\n')}
         }
