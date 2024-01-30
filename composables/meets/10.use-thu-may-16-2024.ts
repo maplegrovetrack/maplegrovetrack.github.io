@@ -10,7 +10,7 @@ export const useThuMay162024 = (): Meet => {
     name: 'JV Conference Championship',
     date: new Date(2024, 4, 16),
     location: schools.MG,
-    schools: [],
+    schools: [schools.MG],
     type: MeetType.JV,
     transport: 'N/A',
     notes: 'All athletes not competing at NWSC Championships.',

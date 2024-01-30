@@ -10,7 +10,7 @@ export const useTueApr162024 = (): Meet => {
     name: 'Quad Meet',
     date: new Date(2024, 3, 16),
     location: schools.MG,
-    schools: [schools.ROGERS, schools.EK, schools.CR],
+    schools: [schools.MG, schools.ROGERS, schools.EK, schools.CR],
     type: MeetType.ALL,
     transport: 'N/A',
     start: {

@@ -27,7 +27,7 @@
               <div class="flex items-center">
                 <div>{{ meet.location?.name || 'TBD' }}</div>
                 <div v-if="meet.location" class="flex items-center ml-1">
-                  <img class="not-prose w-auto h-5" :src="meet.location.logo" :alt="meet.location.name">
+                  <img class="not-prose w-auto h-6" :src="meet.location.logo" :alt="meet.location.name">
                 </div>
               </div>
             </div>
@@ -47,33 +47,33 @@
             </div>
           </div>
         </div>
-        <UDivider class="my-4" :ui="dividerUi" />
-        <div class="space-y-3">
-          <div class="flex gap-2">
-            <div class="flex mt-0.5">
-              <UIcon name="i-heroicons-academic-cap" class="w-5 h-5" />
-            </div>
-            <div v-if="meet.schools.length > 0" class="flex flex-wrap items-center">
-              <div v-for="(school, index) in meet.schools" :key="index" class="flex items-center gap-1">
-                <div>{{ school.name }}</div>
-                <img class="not-prose w-auto h-5" :src="school.logo" :alt="school.name">
-                <div v-if="!isLast(meet.schools, index)" class="ml-1 mr-2">
-                  |
-                </div>
-              </div>
-            </div>
-            <div v-else class="flex items-center">
-              TBD
-            </div>
-          </div>
-          <div class="flex gap-2">
-            <div class="flex mt-0.5">
-              <UIcon name="i-heroicons-exclamation-circle" class="w-5 h-5" />
-            </div>
+        <UDivider class="my-4" :ui="dividerUi">
+          <div class="flex items-center gap-2">
+            <UIcon name="i-heroicons-exclamation-circle" class="w-5 h-5" />
             <div>
-              {{ meet.notes || 'No additional information.' }}
+              Information
             </div>
           </div>
+        </UDivider>
+        <div class="space-y-3">
+          {{ meet.notes || 'No additional information.' }}
+        </div>
+        <UDivider class="my-4" :ui="dividerUi">
+          <div class="flex items-center gap-2">
+            <UIcon name="i-heroicons-academic-cap" class="w-5 h-5" />
+            <div>
+              Schools
+            </div>
+          </div>
+        </UDivider>
+        <div v-if="meet.schools.length > 0" class="grid grid-cols-2 space-y-2">
+          <div v-for="(school, index) in meet.schools" :key="index" class="flex items-center gap-1 space-y-1">
+            <div>{{ school.name }}</div>
+            <img class="not-prose w-auto h-12" :src="school.logo" :alt="school.name">
+          </div>
+        </div>
+        <div v-else class="flex items-center">
+          TBD
         </div>
       </Callout>
     </div>
@@ -85,10 +85,6 @@ import type { Meet } from '~/types/meet-type'
 
 const store = useAppStore()
 const meets = store.meets
-
-const isLast = (array: Array<any>, index: number): boolean => {
-  return array.length - 1 === index
-}
 
 const dividerUi = {
   border: {

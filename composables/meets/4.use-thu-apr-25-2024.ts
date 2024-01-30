@@ -10,7 +10,7 @@ export const useThuApr252024 = (): Meet => {
     name: 'Anoka',
     date: new Date(2024, 3, 25),
     location: schools.ANOKA,
-    schools: [schools.BLAINE, schools.ANOKA, schools.OSSEO, schools.SLP],
+    schools: [schools.MG, schools.BLAINE, schools.ANOKA, schools.OSSEO, schools.SLP],
     type: MeetType.JV,
     transport: 'TBD',
     notes: 'All athletes that did not compete at Minnetonka invite.',

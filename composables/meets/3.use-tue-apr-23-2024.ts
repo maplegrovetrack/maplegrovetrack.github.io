@@ -10,7 +10,7 @@ export const useTueApr232024 = (): Meet => {
     name: 'Minnetonka Invite',
     date: new Date(2024, 3, 23),
     location: schools.MINNETONKA,
-    schools: [],
+    schools: [schools.MG, schools.MINNETONKA],
     type: MeetType.VARSITY,
     transport: 'TBD',
     notes: 'Top 3 in each event and 1 of each relay.',

@@ -17,14 +17,14 @@ export const useThuMay232024 = (): Meet => {
       schools.ARMSTRONG,
       schools.BLAINE,
       schools.CENTENNIAL,
-      schools.CP,
       schools.CR,
       schools.EK,
       schools.OSSEO,
       schools.PC,
       schools.ROGERS,
       schools.SLP,
-      schools.TG
+      schools.TG,
+      schools.CP
     ],
     transport: 'TBD',
     notes: 'Top 3 in each event and 1 of each relay.',
