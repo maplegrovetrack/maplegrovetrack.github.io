@@ -76,7 +76,7 @@
             >
           </div>
         </div>
-        <div v-else class="flex items-center h-12">
+        <div v-else class="flex items-center">
           TBD
         </div>
       </Callout>
