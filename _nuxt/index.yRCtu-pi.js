@@ -1,1 +1,0 @@
-import{u as e}from"./vue.f36acd1f.BXT--cxB.js";import{d as t,v as r,t as n}from"./entry.WFClFRcp.js";const l=t({__name:"index",setup(o){return e({title:"Maple Grove Track & Field"}),(s,a)=>(n(),r("div",null," This site is currently under construction. "))}});export{l as default};
