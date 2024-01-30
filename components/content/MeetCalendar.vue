@@ -67,7 +67,7 @@
           </div>
         </UDivider>
         <div v-if="meet.schools.length > 0" class="grid grid-cols-2">
-          <div v-for="(school, index) in meet.schools" :key="index" class="flex items-center gap-1 space-y-1 h-16">
+          <div v-for="(school, index) in meet.schools" :key="index" class="flex items-center gap-1.5 space-y-1 h-16">
             <div>{{ school.name }}</div>
             <img
               :class="{ 'not-prose': true, [school.logo.width]: true, [school.logo.height]: true }"
