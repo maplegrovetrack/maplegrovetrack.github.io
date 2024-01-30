@@ -1,4 +1,4 @@
-import type { Schools } from '~/types/schools'
+import type { School } from '~/types/schools'
 
 export enum MeetType {
   VARSITY = 'Varsity',
@@ -6,19 +6,23 @@ export enum MeetType {
   ALL = 'Full Team'
 }
 
+export type Transport = 'N/A' | 'TBD'
+
 export type Meet = {
   id: string,
   name: string,
   date: Date,
-  location: Schools,
-  schools: Schools[],
+  location?: School,
+  schools: School[],
   type: MeetType,
-  start: {
+  transport: Transport,
+  notes?: string,
+  start?: {
     hour: string,
     minute: string,
     meridiem: string
   },
-  end: {
+  end?: {
     hour: string,
     minute: string,
     meridiem: string

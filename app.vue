@@ -19,11 +19,9 @@
 <script setup lang="ts">
 import type { NavItem, ParsedContent } from '@nuxt/content/dist/runtime/types'
 
-const { data: navigation } = await useAsyncData<NavItem[]>('navigation', () => fetchContentNavigation())
+const navigation: NavItem[] = await useNavigation()
 const { data: files } = await useLazyFetch<ParsedContent[]>('/api/search.json', {
   default: () => [],
   server: false
 })
-
-provide('navigation', navigation)
 </script>

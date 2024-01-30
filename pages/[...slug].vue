@@ -11,10 +11,10 @@
     </UPageBody>
 
     <template v-if="page?.toc !== false" #right>
-      <UDocsToc :title="toc?.title" :links="page.body?.toc?.links">
+      <UDocsToc :title="toc?.title" :links="store.tocLinks">
         <template v-if="toc?.bottom" #bottom>
-          <div class="hidden lg:block space-y-6" :class="{ '!mt-6': page.body?.toc?.links?.length }">
-            <UDivider v-if="page.body?.toc?.links?.length" type="dashed" />
+          <div class="hidden lg:block space-y-6" :class="{ '!mt-6': store.tocLinks.length }">
+            <UDivider v-if="store.tocLinks.length" type="dashed" />
 
             <UPageLinks :title="toc.bottom.title" :links="links" />
           </div>
@@ -33,6 +33,7 @@ definePageMeta({
 })
 
 const route = useRoute()
+const store = useAppStore()
 const { toc } = useAppConfig()
 
 const { data: page } = await useAsyncData<ParsedContent>(route.path, () => queryContent(route.path).findOne())
@@ -47,6 +48,8 @@ const { data: surround } = await useAsyncData<Pick<ParsedContent, string>[]>(`${
 )
 
 const headline = computed(() => findPageHeadline(page.value))
+
+store.tocLinks = page.value.body?.toc?.links || []
 
 const links = computed(() => [toc?.bottom?.edit && {
   icon: 'i-heroicons-pencil-square',

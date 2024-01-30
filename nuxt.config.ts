@@ -31,6 +31,7 @@ export default defineNuxtConfig({
     }
   },
   modules: [
+    '@pinia/nuxt',
     '@nuxt/content',
     '@nuxtjs/google-fonts',
     '@nuxt/ui'
@@ -39,7 +40,7 @@ export default defineNuxtConfig({
     '/api/search.json': { prerender: true }
   },
   ui: {
-    icons: ['heroicons', 'simple-icons']
+    icons: ['heroicons', 'simple-icons', 'streamline']
   },
   typescript: {
     strict: false

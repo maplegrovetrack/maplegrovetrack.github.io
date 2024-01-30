@@ -58,3 +58,12 @@ npm run deploy
 <br>
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+<br>
+
+- - -
+
+<br>
+
+## Icons
+Search for icons here: https://icon-sets.iconify.design.

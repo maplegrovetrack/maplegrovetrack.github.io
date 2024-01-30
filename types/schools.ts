@@ -1,18 +1,11 @@
-export enum Schools {
-  MG = 'Maple Grove',
-  BLAINE = 'Blaine',
-  OSSEO = 'Osseo',
-  PC = 'Park Center',
-  CP = 'Champlin Park',
-  ARMSTRONG = 'Armstrong',
-  ANOKA = 'Anoka',
-  STM = 'St. Michael-Albertville',
-  ROGERS = 'Rogers',
-  ANDOVER = 'Andover',
-  EK = 'Elk River',
-  IRONDALE = 'Irondale',
-  MV = 'Mounds View',
-  CENTENNIAL = 'Centennial',
-  WAYZATA = 'Wayzata',
-  ROSEVILLE = 'Roseville'
+export type School = {
+  name: string,
+  logo: {
+    src: string,
+    height: string,
+    width: string
+  }
 }
+
+export type SchoolKey = 'MG' | 'BLAINE' | 'OSSEO' | 'PC' | 'CP' | 'ARMSTRONG' | 'ANOKA' | 'STMA' | 'ROGERS' |
+  'ANDOVER' | 'EK' | 'IRONDALE' | 'MV' | 'CENTENNIAL' | 'ROSEVILLE' | 'CR' | 'MINNETONKA' | 'SLP' | 'TG'

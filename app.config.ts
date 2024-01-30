@@ -14,8 +14,8 @@ const gitHub = {
 
 export default defineAppConfig({
   ui: {
-    primary: 'sandrift',
-    gray: 'vista-white',
+    primary: 'falu-red',
+    gray: 'stone',
     footer: {
       bottom: {
         left: 'text-sm text-gray-500 dark:text-gray-400',
