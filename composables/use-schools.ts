@@ -1,23 +1,156 @@
 import type { School, SchoolKey } from '~/types/schools'
 
 export const useSchools = (): Record<SchoolKey, School> => ({
-  MG: { name: 'Maple Grove', logo: '/logo_leaf.png' },
-  BLAINE: { name: 'Blaine', logo: '/blaine.png' },
-  OSSEO: { name: 'Osseo', logo: '/osseo.png' },
-  PC: { name: 'Park Center', logo: '/park_center.png' },
-  CP: { name: 'Champlin Park', logo: '/champlin_park.png' },
-  ARMSTRONG: { name: 'Armstrong', logo: '/armstrong.png' },
-  ANOKA: { name: 'Anoka', logo: '/anoka.png' },
-  STMA: { name: 'St. Michael-Albertville', logo: '/stma.png' },
-  ROGERS: { name: 'Rogers', logo: '/rogers.png' },
-  ANDOVER: { name: 'Andover', logo: '/andover.png' },
-  EK: { name: 'Elk River', logo: '/elk_river.png' },
-  IRONDALE: { name: 'Irondale', logo: '/irondale.png' },
-  MV: { name: 'Mounds View', logo: '/mv.png' },
-  CENTENNIAL: { name: 'Centennial', logo: '/centennial.png' },
-  ROSEVILLE: { name: 'Roseville', logo: '/roseville.png' },
-  CR: { name: 'Coon Rapids', logo: '/coon_rapids.png' },
-  MINNETONKA: { name: 'Minnetonka', logo: '/minnetonka.png' },
-  SLP: { name: 'Spring Lake Park', logo: '/slp.png' },
-  TG: { name: 'Totino-Grace', logo: '/totino_grace.png' }
+  MG: {
+    name: 'Maple Grove',
+    logo: {
+      src: '/logo_leaf.png',
+      width: 'w-auto',
+      height: 'h-14'
+    }
+  },
+  BLAINE: {
+    name: 'Blaine',
+    logo: {
+      src: '/blaine.png',
+      width: 'w-auto',
+      height: 'h-10'
+    }
+  },
+  OSSEO: {
+    name: 'Osseo',
+    logo: {
+      src: '/osseo.png',
+      width: 'w-auto',
+      height: 'h-7'
+    }
+  },
+  PC: {
+    name: 'Park Center',
+    logo: {
+      src: '/park_center.png',
+      width: 'w-auto',
+      height: 'h-12'
+    }
+  },
+  CP: {
+    name: 'Champlin Park',
+    logo: {
+      src: '/champlin_park.png',
+      width: 'w-auto',
+      height: 'h-12'
+    }
+  },
+  ARMSTRONG: {
+    name: 'Armstrong',
+    logo: {
+      src: '/armstrong.png',
+      width: 'w-auto',
+      height: 'h-12'
+    }
+  },
+  ANOKA: {
+    name: 'Anoka',
+    logo: {
+      src: '/anoka.png',
+      width: 'w-auto',
+      height: 'h-12'
+    }
+  },
+  STMA: {
+    name: 'St. Michael-Albertville',
+    logo: {
+      src: '/stma.png',
+      width: 'w-auto',
+      height: 'h-12'
+    }
+  },
+  ROGERS: {
+    name: 'Rogers',
+    logo: {
+      src: '/rogers.png',
+      width: 'w-auto',
+      height: 'h-10'
+    }
+  },
+  ANDOVER: {
+    name: 'Andover',
+    logo: {
+      src: '/andover.png',
+      width: 'w-auto',
+      height: 'h-12'
+    }
+  },
+  EK: {
+    name: 'Elk River',
+    logo: {
+      src: '/elk_river.png',
+      width: 'w-auto',
+      height: 'h-8'
+    }
+  },
+  IRONDALE: {
+    name: 'Irondale',
+    logo: {
+      src: '/irondale.png',
+      width: 'w-auto',
+      height: 'h-12'
+    }
+  },
+  MV: {
+    name: 'Mounds View',
+    logo: {
+      src: '/mv.png',
+      width: 'w-auto',
+      height: 'h-12'
+    }
+  },
+  CENTENNIAL: {
+    name: 'Centennial',
+    logo: {
+      src: '/centennial.png',
+      width: 'w-auto',
+      height: 'h-12'
+    }
+  },
+  ROSEVILLE: {
+    name: 'Roseville',
+    logo: {
+      src: '/roseville.png',
+      width: 'w-auto',
+      height: 'h-12'
+    }
+  },
+  CR: {
+    name: 'Coon Rapids',
+    logo: {
+      src: '/coon_rapids.png',
+      width: 'w-auto',
+      height: 'h-12'
+    }
+  },
+  MINNETONKA: {
+    name: 'Minnetonka',
+    logo: {
+      src: '/minnetonka.png',
+      width: 'w-auto',
+      height: 'h-10'
+    }
+  },
+  SLP: {
+    name: 'Spring Lake Park',
+    logo: {
+      src: '/slp.png',
+      width: 'w-auto',
+      height: 'h-12'
+    }
+  },
+  TG: {
+    name: 'Totino-Grace',
+    logo: {
+      src: '/totino_grace.png',
+      width: 'w-auto',
+      height: 'h-12'
+    }
+  }
 })

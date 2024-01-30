@@ -1,6 +1,10 @@
 export type School = {
   name: string,
-  logo: string
+  logo: {
+    src: string,
+    height: string,
+    width: string
+  }
 }
 
 export type SchoolKey = 'MG' | 'BLAINE' | 'OSSEO' | 'PC' | 'CP' | 'ARMSTRONG' | 'ANOKA' | 'STMA' | 'ROGERS' |

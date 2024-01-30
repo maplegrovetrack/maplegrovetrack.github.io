@@ -27,7 +27,7 @@
               <div class="flex items-center">
                 <div>{{ meet.location?.name || 'TBD' }}</div>
                 <div v-if="meet.location" class="flex items-center ml-1">
-                  <img class="not-prose w-auto h-6" :src="meet.location.logo" :alt="meet.location.name">
+                  <img class="not-prose w-auto h-6" :src="meet.location.logo.src" :alt="meet.location.name">
                 </div>
               </div>
             </div>
@@ -66,13 +66,17 @@
             </div>
           </div>
         </UDivider>
-        <div v-if="meet.schools.length > 0" class="grid grid-cols-2 space-y-2">
-          <div v-for="(school, index) in meet.schools" :key="index" class="flex items-center gap-1 space-y-1">
+        <div v-if="meet.schools.length > 0" class="grid grid-cols-2">
+          <div v-for="(school, index) in meet.schools" :key="index" class="flex items-center gap-1 space-y-1 h-16">
             <div>{{ school.name }}</div>
-            <img class="not-prose w-auto h-12" :src="school.logo" :alt="school.name">
+            <img
+              :class="{ 'not-prose': true, [school.logo.width]: true, [school.logo.height]: true }"
+              :src="school.logo.src"
+              :alt="school.name"
+            >
           </div>
         </div>
-        <div v-else class="flex items-center">
+        <div v-else class="flex items-center h-12">
           TBD
         </div>
       </Callout>
