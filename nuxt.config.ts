@@ -38,8 +38,15 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     'nuxt-og-image'
   ],
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
+  },
   routeRules: {
-    '/api/search.json': { prerender: true }
+    '/api/search.json': {
+      prerender: true
+    }
   },
   site: {
     url: 'https://maplegrovetrack.github.io'
