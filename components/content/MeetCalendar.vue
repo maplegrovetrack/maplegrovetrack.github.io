@@ -6,7 +6,7 @@
         {{ meet.name }}
       </ProseH2>
       <Callout>
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-2 gap-x-3">
           <div class="space-y-3">
             <div class="flex items-center gap-2">
               <UIcon name="i-heroicons-calendar" class="w-5 h-5" />
@@ -66,11 +66,15 @@
             </div>
           </div>
         </UDivider>
-        <div v-if="meet.schools.length > 0" class="grid grid-cols-2">
-          <div v-for="(school, index) in meet.schools" :key="index" class="flex items-center gap-1.5 space-y-1 h-16">
+        <div v-if="meet.schools.length > 0" class="grid grid-cols-2 gap-x-3">
+          <div
+            v-for="(school, index) in meet.schools"
+            :key="index"
+            class="flex justify-between items-center space-y-1 h-16 w-full"
+          >
             <div>{{ school.name }}</div>
             <img
-              :class="{ 'not-prose': true, [school.logo.width]: true, [school.logo.height]: true }"
+              :class="[ 'not-prose', school.logo.width, school.logo.height]"
               :src="school.logo.src"
               :alt="school.name"
             >

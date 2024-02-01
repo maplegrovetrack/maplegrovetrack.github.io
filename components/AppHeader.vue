@@ -4,8 +4,11 @@
       <template v-if="header?.logo?.dark || header?.logo?.light">
         <div class="flex items-center gap-2">
           <UColorModeImage v-bind="{ class: 'h-16 w-auto', ...header?.logo }" />
-          <div class="w-40 md:w-auto lg:w-80">
+          <div class="hidden sm:block">
             Maple Grove Track & Field
+          </div>
+          <div class="block sm:hidden">
+            MG T&F
           </div>
         </div>
       </template>
