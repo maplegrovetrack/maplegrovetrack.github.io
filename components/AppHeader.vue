@@ -4,7 +4,7 @@
       <template v-if="header?.logo?.dark || header?.logo?.light">
         <div class="flex items-center gap-2">
           <UColorModeImage v-bind="{ class: 'h-16 w-auto', ...header?.logo }" />
-          <div class="hidden sm:block">
+          <div class="lg:w-80 hidden sm:block">
             Maple Grove Track & Field
           </div>
           <div class="block sm:hidden">
@@ -23,8 +23,6 @@
     </template>
 
     <template #right>
-      <UDocsSearchButton v-if="header?.search" :label="undefined" class="lg:hidden" />
-
       <AppColorPicker v-if="header?.colorPicker" />
       <UColorModeButton v-if="header?.colorMode" />
 
@@ -38,6 +36,7 @@
     </template>
 
     <template #panel>
+      <UDocsSearchButton v-if="header?.search" class="w-full h-10 mb-4" />
       <UNavigationTree :links="mapContentNavigation(navigation)" />
     </template>
   </UHeader>
