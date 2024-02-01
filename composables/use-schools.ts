@@ -38,7 +38,7 @@ export const useSchools = (): Record<SchoolKey, School> => ({
     logo: {
       src: '/champlin_park.png',
       width: 'w-auto',
-      height: 'h-12'
+      height: 'h-8 md:h-12'
     }
   },
   ARMSTRONG: {
