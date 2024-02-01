@@ -32,7 +32,7 @@ export default defineAppConfig({
       light: '/logo_leaf.png',
       dark: '/logo_leaf.png'
     },
-    search: false,
+    search: true,
     colorPicker: true,
     colorPickerColors: ['vista-white', 'red', 'rose', 'old-rose', 'falu-red', 'sandrift'],
     colorMode: true,
