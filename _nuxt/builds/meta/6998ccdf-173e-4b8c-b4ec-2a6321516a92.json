@@ -1,0 +1,1 @@
+{"id":"6998ccdf-173e-4b8c-b4ec-2a6321516a92","timestamp":1706756386373,"matcher":{"static":{"/":null,"/api":null,"/api/search.json":{"prerender":true}},"wildcard":{},"dynamic":{}},"prerendered":["/","/schedules/events","/schedules/practices","/schedules/meets"]}
