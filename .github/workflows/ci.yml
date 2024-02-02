@@ -12,16 +12,16 @@ jobs:
   run:
     runs-on: ubuntu-latest
 
-    permissions:
-      push: write
-      pull-requests: write
-
     env:
       NUXT_UI_PRO_LICENSE: ${{ secrets.NUXT_UI_PRO_LICENSE }}
 
     steps:
       - name: Check out Git Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        run: |
+          date > generated.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -42,12 +42,6 @@ jobs:
 
       - name: Generate
         run: npm run generate
-
-      - uses: actions/checkout@v3
-        run: |
-            date > generated.txt
-            git config user.name github-actions
-            git config user.email github-actions@github.com
 
       - name: Deploy
         run: npm run deploy
