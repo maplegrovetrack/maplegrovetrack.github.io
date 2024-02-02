@@ -18,7 +18,7 @@
             {{ description }}
           </p>
         </div>
-        <img style="height: 288px; width: 274px;" src="/logo_leaf.png" alt="Maple Grove Senior High Maple Leaf" />
+        <img style="height: 288px; width: 274px;" src="/logo_leaf.png" alt="Maple Grove Senior High Maple Leaf">
       </div>
     </div>
   </div>
