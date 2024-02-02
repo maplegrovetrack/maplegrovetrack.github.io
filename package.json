@@ -22,6 +22,7 @@
     "@pinia/nuxt": "^0.5.1",
     "@popperjs/core": "^2.11.8",
     "@types/node": "^20",
+    "@vue/server-renderer": "3.3.13",
     "eslint": "^8.56.0",
     "gh-pages": "^6.1.1",
     "nuxt": "^3.10.0",
@@ -29,7 +30,8 @@
     "pinia": "^2.1.7",
     "sass": "^1.70.0",
     "sitemap": "^7.1.1",
-    "v-calendar": "^3.1.2"
+    "v-calendar": "^3.1.2",
+    "vue": "3.3.13"
   },
   "overrides": {
     "vue": "3.3.13"
