@@ -19,12 +19,6 @@ jobs:
       - name: Check out Git Repository
         uses: actions/checkout@v4
 
-      - name: Set up User
-        run: |
-          date > generated.txt
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -45,5 +39,9 @@ jobs:
       - name: Generate
         run: npm run generate
 
-      - name: Deploy
-        run: npm run deploy
+      - name: Deploy with gh-pages
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "deploy": "gh-pages -d dist --dotfiles",
+    "deploy": "gh-pages -d dist --dotfiles --nojekyll",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "lint": "eslint --no-fix --max-warnings 0 --ext .js,.ts,.vue .",
