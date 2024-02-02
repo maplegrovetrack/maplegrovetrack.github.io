@@ -6,7 +6,7 @@
     "deploy": "gh-pages -d dist --dotfiles",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.ts,.vue .",
+    "lint": "eslint --no-fix --max-warnings 0 --ext .js,.ts,.vue .",
     "test": "vitest run",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
