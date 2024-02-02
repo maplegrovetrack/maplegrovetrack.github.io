@@ -1,4 +1,4 @@
-name: Lint
+name: Pull Request
 
 on:
   # Trigger the workflow on push or pull request,
@@ -22,17 +22,15 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # ESLint and Prettier must be in `package.json`
-      - name: Install Node.js dependencies
+      - name: Install
         run: npm ci
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          auto_fix: true
-          eslint: true
-          prettier: false
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test

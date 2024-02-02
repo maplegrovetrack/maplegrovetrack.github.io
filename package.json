@@ -7,6 +7,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.ts,.vue .",
+    "test": "vitest run",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
@@ -22,6 +23,7 @@
     "@pinia/nuxt": "^0.5.1",
     "@popperjs/core": "^2.11.8",
     "@types/node": "^20",
+    "@vitest/coverage-v8": "^1.2.2",
     "@vue/server-renderer": "3.3.13",
     "eslint": "^8.56.0",
     "gh-pages": "^6.1.1",
@@ -31,6 +33,7 @@
     "sass": "^1.70.0",
     "sitemap": "^7.1.1",
     "v-calendar": "^3.1.2",
+    "vitest": "^1.2.2",
     "vue": "3.3.13"
   },
   "overrides": {
