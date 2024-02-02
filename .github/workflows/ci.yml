@@ -1,13 +1,16 @@
-name: PR Main
+name: CI Main
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
 jobs:
   run:
     runs-on: ubuntu-latest
+
+    env:
+      NUXT_UI_PRO_LICENSE: ${{ secrets.NUXT_UI_PRO_LICENSE }}
 
     steps:
       - name: Check out Git Repository
@@ -26,3 +29,12 @@ jobs:
 
       - name: Test
         run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Generate
+        run: npm run generate
+
+      - name: Deploy
+        run: npm run deploy
