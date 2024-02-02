@@ -5,9 +5,16 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   run:
     runs-on: ubuntu-latest
+
+    permissions:
+      push: write
+      pull-requests: write
 
     env:
       NUXT_UI_PRO_LICENSE: ${{ secrets.NUXT_UI_PRO_LICENSE }}
@@ -35,6 +42,12 @@ jobs:
 
       - name: Generate
         run: npm run generate
+
+      - uses: actions/checkout@v3
+        run: |
+            date > generated.txt
+            git config user.name github-actions
+            git config user.email github-actions@github.com
 
       - name: Deploy
         run: npm run deploy
