@@ -1,5 +1,5 @@
-import { defineNuxtPlugin } from '#imports'
 import { hexToRgb } from '#ui/utils'
+import { defineNuxtPlugin } from '#imports'
 import colors from '#tailwind-config/theme/colors'
 
 /**
