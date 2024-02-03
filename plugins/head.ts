@@ -1,5 +1,5 @@
-import { defineNuxtPlugin, useAppConfig, useHead, useSeoMeta } from '#imports'
 import type { AppConfig } from 'nuxt/schema'
+import { defineNuxtPlugin, useAppConfig, useHead, useSeoMeta } from '#imports'
 
 export default defineNuxtPlugin((): void => {
   const config: AppConfig = useAppConfig()

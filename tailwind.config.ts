@@ -54,7 +54,7 @@ export default <Partial<Config>>{
           600: '#B3947F',
           700: '#776255',
           800: '#5A4A3F',
-          900: '#3C312A',
+          900: '#3C312A'
         },
         ironstone: {
           50: '#FAF6F6',
@@ -66,7 +66,7 @@ export default <Partial<Config>>{
           600: '#864A3F',
           700: '#59312A',
           800: '#432520',
-          900: '#2D1915',
+          900: '#2D1915'
         },
         matrix: {
           50: '#FBF7F7',
@@ -78,7 +78,7 @@ export default <Partial<Config>>{
           600: '#985A53',
           700: '#653C37',
           800: '#4C2D29',
-          900: '#331E1C',
+          900: '#331E1C'
         },
         'old-rose': {
           50: '#FCF8F9',

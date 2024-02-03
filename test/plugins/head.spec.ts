@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import headPlugin from '../../plugins/head'
+import headPlugin from '~/plugins/head'
 import { useAppConfig, useHead, useSeoMeta } from '#imports'
 
 vi.mock('#imports', () => ({

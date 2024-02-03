@@ -68,6 +68,6 @@ useSeoMeta({
 
 defineOgImageComponent('AppOgImage', {
   title: page.value.title,
-  description: page.value.description,
+  description: page.value.description
 })
 </script>

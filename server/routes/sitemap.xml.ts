@@ -1,8 +1,8 @@
-import { serverQueryContent } from '#content/server'
 import { SitemapStream, streamToPromise } from 'sitemap'
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
-import { defineEventHandler } from '#imports'
 import type { H3Event } from 'h3'
+import { defineEventHandler } from 'h3'
+import { serverQueryContent } from '#content/server'
 
 export default defineEventHandler(async(event: H3Event): Promise<Buffer> => {
   // Fetch all documents
