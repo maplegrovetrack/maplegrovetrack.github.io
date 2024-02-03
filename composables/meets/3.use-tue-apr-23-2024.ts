@@ -2,13 +2,14 @@ import type { Meet } from '~/types/meet-type'
 import { MeetType } from '~/types/meet-type'
 import type { School, SchoolKey } from '~/types/schools'
 import { useSchools } from '~/composables/use-schools'
+import { useDate } from '~/composables/use-date'
 
 export const useTueApr232024 = (): Meet => {
   const schools: Record<SchoolKey, School> = useSchools()
   return {
     id: '__4-23-2024__',
     name: 'Minnetonka Invite',
-    date: new Date(2024, 3, 23),
+    date: useDate(2024, 4, 23),
     location: schools.MINNETONKA,
     schools: [schools.MG, schools.MINNETONKA],
     type: MeetType.VARSITY,
