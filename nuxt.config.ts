@@ -52,7 +52,7 @@ export default defineNuxtConfig({
     url: 'https://maplegrovetrack.github.io'
   },
   ui: {
-    icons: ['heroicons', 'simple-icons', 'streamline']
+    icons: ['fluent-mdl2', 'heroicons', 'simple-icons', 'streamline']
   },
   typescript: {
     strict: false
