@@ -4,6 +4,8 @@ import type { Practice } from '~/types/practice-type'
 
 export const useWeightRoomScheduleFuture = (): Practice[] => {
   return useWeightRoomSchedule().filter((practice: Practice): boolean => {
-    return DateTime.now() < DateTime.fromJSDate(practice.date)
+    const now = DateTime.now().startOf('day')
+    const practiceDate = DateTime.fromJSDate(practice.date).startOf('day')
+    return practiceDate.equals(now) || now < practiceDate
   })
 }

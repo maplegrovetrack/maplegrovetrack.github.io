@@ -8,6 +8,7 @@
       :borderless="true"
       :transparent="true"
       :attributes="attributes"
+      @dayclick="onDayClick"
     />
   </ClientOnly>
 </template>
@@ -18,9 +19,15 @@ import 'v-calendar/style.css'
 
 defineProps<{ attributes: Array<object> }>()
 
+const emits = defineEmits(['dayclick'])
+
 const appConfig = useAppConfig()
 const colorMode = useColorMode()
 
 const isDark = computed(() => colorMode.value === 'dark')
 const color = computed(() => appConfig.ui.primary)
+
+const onDayClick = (event?: Event) => {
+  emits('dayclick', { event })
+}
 </script>
