@@ -8,32 +8,7 @@
       There are no practices for {{ DateTime.fromJSDate(selectedDate).toLocaleString(DateTime.DATE_HUGE) }}.
     </div>
     <div v-for="practice in practices" :key="practice.key">
-      <Callout>
-        <div class="grid grid-cols-2 gap-x-3">
-          <div class="space-y-3">
-            <div class="flex items-center gap-2">
-              <UIcon name="i-heroicons-calendar" class="w-5 h-5" />
-              {{ DateTime.fromJSDate(practice.date).toLocaleString(DateTime.DATE_HUGE) }}
-            </div>
-            <div class="flex items-center gap-2">
-              <UIcon name="i-heroicons-clock" class="w-5 h-5" />
-              <div>
-                {{ practice.start.hour }}:{{ practice.start.minute }} {{ practice.start.meridiem }} -
-                {{ practice.end.hour }}:{{ practice.end.minute }} {{ practice.end.meridiem }}
-              </div>
-            </div>
-          </div>
-          <div class="space-y-3">
-            <div v-if="useIsWeightRoom(practice.type)" class="flex items-center gap-2">
-              <UIcon name="i-fluent-mdl2-weights" class="w-5 h-5" />
-              <div class="flex items-center">
-                <div>Weight Room</div>
-                <WeightRoomBadge />
-              </div>
-            </div>
-          </div>
-        </div>
-      </Callout>
+      <PracticeCallout :practice="practice" />
     </div>
   </div>
 </template>
@@ -41,23 +16,19 @@
 <script setup lang="ts">
 import { DateTime } from 'luxon'
 import type { CalendarDay } from 'v-calendar/dist/types/src/utils/page.d.ts'
-import { useIsWeightRoom } from '~/composables/practices/use-is-weight-room'
-import { useWeightRoomLocalStorage } from '~/composables/practices/use-weight-room-local-storage'
+import type { ComputedRef } from 'vue'
+import type { AttributeConfig } from 'v-calendar/dist/types/src/utils/attribute.d.ts'
+import type { Practice } from '~/types/practice-type'
 import { useWeightRoomCalendar } from '~/composables/practices/use-weight-room-calendar'
 import { useWeightRoomSchedule } from '~/composables/practices/use-weight-room-schedule'
-import {
-  usePracticeCalendarSelectedDateLocalStorage
-} from '~/composables/practices/use-practice-calendar-selected-date-local-storage'
-import {
-  usePracticeCalendarSetSelectedDateLocalStorage
-} from '~/composables/practices/use-practice-calendar-set-selected-date-local-storage'
+import { usePracticesStore } from '~/composables/practices/use-practices-store'
 
-const weightRoom = ref(useWeightRoomLocalStorage())
+const store = usePracticesStore()
 const nowDateTime = DateTime.now().startOf('day')
 const now = nowDateTime.toJSDate()
-const selectedDate = ref(usePracticeCalendarSelectedDateLocalStorage() || now)
+const selectedDate = ref(now)
 
-const attributes = computed(() => [
+const attributes: ComputedRef<AttributeConfig[]> = computed(() => [
   {
     key: 'today',
     highlight: {
@@ -72,17 +43,16 @@ const attributes = computed(() => [
     },
     dates: selectedDate.value
   }),
-  (weightRoom.value && useWeightRoomCalendar())
+  (store.weightRoom && useWeightRoomCalendar())
 ])
 
-const practices = computed(() => [
-  ...(weightRoom.value ? useWeightRoomSchedule() : []).filter((practice) => {
+const practices: ComputedRef<Practice[]> = computed(() => [
+  ...(store.weightRoom ? useWeightRoomSchedule() : []).filter((practice) => {
     return DateTime.fromJSDate(practice.date).startOf('day').equals(DateTime.fromJSDate(selectedDate.value))
   })
 ])
 
 const dayclick = ({ event }: { event: CalendarDay }) => {
   selectedDate.value = DateTime.fromJSDate(event.date).startOf('day').toJSDate()
-  usePracticeCalendarSetSelectedDateLocalStorage(selectedDate.value)
 }
 </script>
