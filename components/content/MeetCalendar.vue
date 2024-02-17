@@ -10,7 +10,7 @@
           <div class="space-y-3">
             <div class="flex items-center gap-2">
               <UIcon name="i-heroicons-calendar" class="w-5 h-5" />
-              {{ meet.date.toDateString() }}
+              {{ DateTime.fromJSDate(meet.date).toLocaleString(DateTime.DATE_HUGE) }}
             </div>
             <div class="flex items-center gap-2">
               <UIcon name="i-heroicons-clock" class="w-5 h-5" />
@@ -89,6 +89,7 @@
 </template>
 
 <script setup lang="ts">
+import { DateTime } from 'luxon'
 import type { Meet } from '~/types/meet-type'
 
 const store = useAppStore()
@@ -114,7 +115,7 @@ const dividerUi = {
 
 store.tocLinks = store.meets.map((meet: Meet) => ({
   id: meet.id,
-  text: meet.date.toDateString(),
+  text: `${DateTime.fromJSDate(meet.date).toFormat('LLL d')} - ${meet.name}`,
   depth: 2
 }))
 </script>
