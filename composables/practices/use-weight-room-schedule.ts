@@ -4,36 +4,6 @@ import type { Practice } from '~/types/practice-type'
 export const useWeightRoomSchedule = (): Array<Practice> => {
   return [
     {
-      id: 'weight-room-00',
-      date: useDate(2024, 2, 11),
-      start: {
-        hour: '11',
-        minute: '00',
-        meridiem: 'PM'
-      },
-      end: {
-        hour: '11',
-        minute: '30',
-        meridiem: 'PM'
-      },
-      type: 'WEIGHT_ROOM'
-    },
-    {
-      id: 'weight-room-0',
-      date: useDate(2024, 2, 12),
-      start: {
-        hour: '11',
-        minute: '00',
-        meridiem: 'PM'
-      },
-      end: {
-        hour: '11',
-        minute: '30',
-        meridiem: 'PM'
-      },
-      type: 'WEIGHT_ROOM'
-    },
-    {
       id: 'weight-room-1',
       date: useDate(2024, 3, 13),
       start: {
