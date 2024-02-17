@@ -6,7 +6,7 @@
         {{ meet.name }}
       </ProseH2>
       <Callout>
-        <div class="grid grid-cols-2 gap-x-3">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div class="space-y-3">
             <div class="flex items-center gap-2">
               <UIcon name="i-heroicons-calendar" class="w-5 h-5" />
