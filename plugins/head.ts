@@ -6,8 +6,7 @@ export default defineNuxtPlugin((): void => {
 
   useHead({
     meta: [
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'google-site-verification', content: '0FPpaNyK55jc_1OSNKGkJ4_1RG4Ibh4bf_XAEZPC6DI' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
       { rel: 'icon', href: '/favicon.ico' }
