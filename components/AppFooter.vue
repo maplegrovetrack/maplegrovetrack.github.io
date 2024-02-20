@@ -6,6 +6,7 @@
 
     <template #right>
       <UColorModeButton v-if="footer?.colorMode" />
+      <AppStackTeamAppLogo />
 
       <template v-if="footer?.links">
         <UButton
