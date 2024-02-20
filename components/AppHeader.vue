@@ -3,7 +3,7 @@
     <template #logo>
       <template v-if="header?.logo?.dark || header?.logo?.light">
         <div class="flex items-center gap-2">
-          <UColorModeImage v-bind="{ class: 'h-8 md:h-10 w-auto', ...header?.logo }" />
+          <UColorModeImage v-bind="{ class: 'h-10 md:h-16 w-auto', ...header?.logo }" />
           <div class="lg:w-80 hidden sm:block">
             Maple Grove Track & Field
           </div>
