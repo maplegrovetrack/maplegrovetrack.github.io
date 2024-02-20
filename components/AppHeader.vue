@@ -3,18 +3,17 @@
     <template #logo>
       <template v-if="header?.logo?.dark || header?.logo?.light">
         <div class="flex items-center gap-2">
-          <UColorModeImage v-bind="{ class: 'h-16 w-auto', ...header?.logo }" />
+          <UColorModeImage v-bind="{ class: 'h-8 md:h-10 w-auto', ...header?.logo }" />
           <div class="lg:w-80 hidden sm:block">
             Maple Grove Track & Field
           </div>
           <div class="block sm:hidden">
-            MG T&F
+            MGTF
           </div>
         </div>
       </template>
       <template v-else>
-        Nuxt UI Pro
-        <UBadge label="Docs" variant="subtle" class="mb-0.5" />
+        MGTF
       </template>
     </template>
 
@@ -25,6 +24,7 @@
     <template #right>
       <AppColorPicker v-if="header?.colorPicker" />
       <UColorModeButton v-if="header?.colorMode" />
+      <AppStackTeamAppLogo />
 
       <template v-if="header?.links">
         <UButton
