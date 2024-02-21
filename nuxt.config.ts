@@ -6,7 +6,9 @@ export default defineNuxtConfig({
     fallback: 'dark'
   },
   content: {},
-  css: ['assets/calendar.scss'],
+  css: [
+    'assets/calendar.scss'
+  ],
   devtools: {
     enabled: true
   },
@@ -17,13 +19,21 @@ export default defineNuxtConfig({
     display: 'swap',
     download: true,
     families: {
-      'DM+Sans': [400, 500, 600, 700]
+      'DM+Sans': [
+        400,
+        500,
+        600,
+        700
+      ]
     }
   },
   hooks: {
     // Define `@nuxt/ui` components as global to use them in `.md`
     'components:extend': (components: Component[]): void => {
-      const include: string[] = ['UAlert', 'ULandingCard']
+      const include: string[] = [
+        'UAlert',
+        'ULandingCard'
+      ]
       const globals: Component[] = components.filter(c => include.includes(c.pascalName))
 
       globals.forEach((c: Component) => {
@@ -40,7 +50,9 @@ export default defineNuxtConfig({
   ],
   nitro: {
     prerender: {
-      routes: ['/sitemap.xml']
+      routes: [
+        '/sitemap.xml'
+      ]
     }
   },
   routeRules: {
@@ -52,7 +64,13 @@ export default defineNuxtConfig({
     url: 'https://maplegrovetrack.github.io'
   },
   ui: {
-    icons: ['fluent-mdl2', 'heroicons', 'simple-icons', 'streamline']
+    icons: [
+      'fluent-mdl2',
+      'heroicons',
+      'mdi',
+      'simple-icons',
+      'streamline'
+    ]
   },
   typescript: {
     strict: false
