@@ -29,7 +29,6 @@ import { DateTime } from 'luxon'
 import type { ComputedRef } from 'vue'
 import type { Practice } from '~/types/practice-type'
 import { usePracticesStore } from '~/composables/practices/use-practices-store'
-import { useWeightRoomSchedule } from '~/composables/practices/use-weight-room-schedule'
 import { usePracticesSchedule } from '~/composables/practices/use-practices-schedule'
 
 const store = usePracticesStore()
