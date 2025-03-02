@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@iconify-json/fluent-mdl2": "^1.1.6",
+    "@iconify-json/game-icons": "^1.2.1",
     "@iconify-json/heroicons": "^1.1.19",
     "@iconify-json/simple-icons": "^1.1.90",
     "@iconify-json/streamline": "^1.1.8",

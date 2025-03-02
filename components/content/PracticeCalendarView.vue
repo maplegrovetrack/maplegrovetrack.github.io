@@ -20,12 +20,17 @@ import type { ComputedRef } from 'vue'
 import type { AttributeConfig } from 'v-calendar/dist/types/src/utils/attribute.d.ts'
 import type { Practice } from '~/types/practice-type'
 import { useWeightRoomCalendar } from '~/composables/practices/use-weight-room-calendar'
-import { useWeightRoomSchedule } from '~/composables/practices/use-weight-room-schedule'
 import { usePracticesStore } from '~/composables/practices/use-practices-store'
+import { usePracticesSchedule } from '~/composables/practices/use-practices-schedule'
+import { useTrackPracticesCalendar } from '~/composables/practices/use-track-practices-calendar'
+import { useTryoutsCalendar } from '~/composables/practices/use-tryouts-calendar'
+import { useSpringBreakPracticesCalendar } from '~/composables/practices/use-spring-break-practices-calendar'
+import { useOptionalPracticesCalendar } from '~/composables/practices/use-optional-practices-calendar'
 
 const store = usePracticesStore()
 const nowDateTime = DateTime.now().startOf('day')
 const now = nowDateTime.toJSDate()
+const schedules = usePracticesSchedule()
 const selectedDate = ref(now)
 
 const attributes: ComputedRef<AttributeConfig[]> = computed(() => [
@@ -43,11 +48,27 @@ const attributes: ComputedRef<AttributeConfig[]> = computed(() => [
     },
     dates: selectedDate.value
   }),
-  (store.weightRoom && useWeightRoomCalendar())
+  (store.weightRoom && useWeightRoomCalendar()),
+  (store.trackPractices && useTrackPracticesCalendar()),
+  (store.tryouts && useTryoutsCalendar()),
+  (store.springBreak && useSpringBreakPracticesCalendar()),
+  (store.optional && useOptionalPracticesCalendar())
 ])
 
 const practices: ComputedRef<Practice[]> = computed(() => [
-  ...(store.weightRoom ? useWeightRoomSchedule() : []).filter((practice) => {
+  ...(store.weightRoom ? schedules.WEIGHT_ROOM : []).filter((practice) => {
+    return DateTime.fromJSDate(practice.date).startOf('day').equals(DateTime.fromJSDate(selectedDate.value))
+  }),
+  ...(store.trackPractices ? schedules.TRACK : []).filter((practice) => {
+    return DateTime.fromJSDate(practice.date).startOf('day').equals(DateTime.fromJSDate(selectedDate.value))
+  }),
+  ...(store.tryouts ? schedules.TRYOUTS : []).filter((practice) => {
+    return DateTime.fromJSDate(practice.date).startOf('day').equals(DateTime.fromJSDate(selectedDate.value))
+  }),
+  ...(store.springBreak ? schedules.SPRING_BREAK : []).filter((practice) => {
+    return DateTime.fromJSDate(practice.date).startOf('day').equals(DateTime.fromJSDate(selectedDate.value))
+  }),
+  ...(store.optional ? schedules.OPTIONAL : []).filter((practice) => {
     return DateTime.fromJSDate(practice.date).startOf('day').equals(DateTime.fromJSDate(selectedDate.value))
   })
 ])

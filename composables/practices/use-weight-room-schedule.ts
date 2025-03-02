@@ -1,4 +1,4 @@
-import { useDate } from '../use-date'
+import { useDate } from '~/composables/use-date'
 import type { Practice } from '~/types/practice-type'
 
 export const useWeightRoomSchedule = (): Array<Practice> => {

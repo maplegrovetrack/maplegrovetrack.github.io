@@ -3,6 +3,22 @@
     <ClientOnly>
       <div>
         <div class="flex items-center mb-3">
+          <UCheckbox id="track-practice" v-model="store.trackPractices" color="red" label="Mandatory practice" />
+          <TrackPracticeBadge />
+        </div>
+        <div class="flex items-center mb-3">
+          <UCheckbox id="tryouts" v-model="store.tryouts" color="yellow" label="Tryouts" />
+          <TryoutsBadge />
+        </div>
+        <div class="flex items-center mb-3">
+          <UCheckbox id="spring-break" v-model="store.springBreak" color="teal" label="Spring break practice" />
+          <SpringBreakPracticesBadge />
+        </div>
+        <div class="flex items-center mb-3">
+          <UCheckbox id="optional" v-model="store.optional" color="orange" label="Optional practice" />
+          <OptionalPracticesBadge />
+        </div>
+        <div class="flex items-center mb-3">
           <UCheckbox id="weight-room" v-model="store.weightRoom" color="blue" label="Weight Room" />
           <WeightRoomBadge />
         </div>
@@ -21,6 +37,8 @@
 
 <script setup lang="ts">
 import { usePracticesStore } from '~/composables/practices/use-practices-store'
+import SpringBreakPracticesBadge from '~/components/content/SpringBreakPracticesBadge.vue'
+import OptionalPracticesBadge from '~/components/content/OptionalPracticesBadge.vue'
 
 const store = usePracticesStore()
 </script>

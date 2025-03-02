@@ -1,5 +1,5 @@
 import type { NavItem } from '@nuxt/content/dist/runtime/types'
-import { useAppStore } from './use-app-store'
+import { useAppStore } from '~/composables/use-app-store'
 import { fetchContentNavigation } from '#imports'
 
 export const useNavigation = async(): Promise<NavItem[]> => {

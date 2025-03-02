@@ -30,8 +30,10 @@ import type { ComputedRef } from 'vue'
 import type { Practice } from '~/types/practice-type'
 import { usePracticesStore } from '~/composables/practices/use-practices-store'
 import { useWeightRoomSchedule } from '~/composables/practices/use-weight-room-schedule'
+import { usePracticesSchedule } from '~/composables/practices/use-practices-schedule'
 
 const store = usePracticesStore()
+const schedules = usePracticesSchedule()
 const nowDateTime = DateTime.now().startOf('day')
 const dividerUi = {
   border: {
@@ -40,7 +42,23 @@ const dividerUi = {
 }
 
 const practices: ComputedRef<Practice[]> = computed(() => [
-  ...(store.weightRoom ? useWeightRoomSchedule() : []).filter((practice) => {
+  ...(store.weightRoom ? schedules.WEIGHT_ROOM : []).filter((practice) => {
+    const practiceDay = DateTime.fromJSDate(practice.date).startOf('day')
+    return nowDateTime.equals(practiceDay) || practiceDay > DateTime.now().startOf('day')
+  }),
+  ...(store.trackPractices ? schedules.TRACK : []).filter((practice) => {
+    const practiceDay = DateTime.fromJSDate(practice.date).startOf('day')
+    return nowDateTime.equals(practiceDay) || practiceDay > DateTime.now().startOf('day')
+  }),
+  ...(store.tryouts ? schedules.TRYOUTS : []).filter((practice) => {
+    const practiceDay = DateTime.fromJSDate(practice.date).startOf('day')
+    return nowDateTime.equals(practiceDay) || practiceDay > DateTime.now().startOf('day')
+  }),
+  ...(store.springBreak ? schedules.SPRING_BREAK : []).filter((practice) => {
+    const practiceDay = DateTime.fromJSDate(practice.date).startOf('day')
+    return nowDateTime.equals(practiceDay) || practiceDay > DateTime.now().startOf('day')
+  }),
+  ...(store.optional ? schedules.OPTIONAL : []).filter((practice) => {
     const practiceDay = DateTime.fromJSDate(practice.date).startOf('day')
     return nowDateTime.equals(practiceDay) || practiceDay > DateTime.now().startOf('day')
   })

@@ -8,7 +8,10 @@
         </div>
         <div class="flex items-center gap-2">
           <UIcon name="i-heroicons-clock" class="w-5 h-5" />
-          <div>
+          <div v-if="useIsSpringBreakPractice(practice.type) || !practice.start">
+            Dependent on event area.
+          </div>
+          <div v-else>
             {{ practice.start.hour }}:{{ practice.start.minute }} {{ practice.start.meridiem }} -
             {{ practice.end.hour }}:{{ practice.end.minute }} {{ practice.end.meridiem }}
           </div>
@@ -16,6 +19,10 @@
       </div>
       <div class="space-y-3">
         <WeightRoomCallout v-if="useIsWeightRoom(practice.type)" />
+        <TrackPracticeCallout v-if="useIsTrackPractice(practice.type)" />
+        <TryoutsCallout v-if="useIsTryoutPractice(practice.type)" />
+        <SpringBreakPracticeCallout v-if="useIsSpringBreakPractice(practice.type)" />
+        <OptionalPracticeCallout v-if="useIsOptionalPractice(practice.type)" />
       </div>
     </div>
   </Callout>
@@ -23,8 +30,13 @@
 
 <script setup lang="ts">
 import { DateTime } from 'luxon'
-import { useIsWeightRoom } from '~/composables/practices/use-is-weight-room'
 import type { Practice } from '~/types/practice-type'
+import { useIsWeightRoom } from '~/composables/practices/use-is-weight-room'
+import { useIsTrackPractice } from '~/composables/practices/use-is-track-practice'
+import { useIsTryoutPractice } from '~/composables/practices/use-is-tryout-practice'
+import { useIsSpringBreakPractice } from '~/composables/practices/use-is-spring-break-practice'
+import SpringBreakPracticeCallout from '~/components/content/SpringBreakPracticeCallout.vue'
+import { useIsOptionalPractice } from '~/composables/practices/use-is-optional-practice'
 
 defineProps<{ practice: Practice }>()
 </script>
