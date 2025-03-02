@@ -2,155 +2,66 @@ import type { School, SchoolKey } from '~/types/schools'
 
 export const useSchools = (): Record<SchoolKey, School> => ({
   MG: {
-    name: 'Maple Grove',
-    logo: {
-      src: '/logo_leaf.png',
-      width: 'w-auto',
-      height: 'h-14'
-    }
+    name: 'Maple Grove'
   },
   BLAINE: {
-    name: 'Blaine',
-    logo: {
-      src: '/blaine.png',
-      width: 'w-auto',
-      height: 'h-10'
-    }
+    name: 'Blaine'
   },
   OSSEO: {
-    name: 'Osseo',
-    logo: {
-      src: '/osseo.png',
-      width: 'w-auto',
-      height: 'h-7'
-    }
+    name: 'Osseo'
   },
   PC: {
-    name: 'Park Center',
-    logo: {
-      src: '/park_center.png',
-      width: 'w-auto',
-      height: 'h-12'
-    }
+    name: 'Park Center'
   },
   CP: {
-    name: 'Champlin Park',
-    logo: {
-      src: '/champlin_park.png',
-      width: 'w-auto',
-      height: 'h-8 md:h-12'
-    }
+    name: 'Champlin Park'
   },
   ARMSTRONG: {
-    name: 'Armstrong',
-    logo: {
-      src: '/armstrong.png',
-      width: 'w-auto',
-      height: 'h-12'
-    }
+    name: 'Armstrong'
   },
   ANOKA: {
-    name: 'Anoka',
-    logo: {
-      src: '/anoka.png',
-      width: 'w-auto',
-      height: 'h-12'
-    }
+    name: 'Anoka'
   },
   STMA: {
-    name: 'St. Michael-Albertville',
-    logo: {
-      src: '/stma.png',
-      width: 'w-auto',
-      height: 'h-12'
-    }
+    name: 'St. Michael-Albertville'
   },
   ROGERS: {
-    name: 'Rogers',
-    logo: {
-      src: '/rogers.png',
-      width: 'w-auto',
-      height: 'h-10'
-    }
+    name: 'Rogers'
   },
   ANDOVER: {
-    name: 'Andover',
-    logo: {
-      src: '/andover.png',
-      width: 'w-auto',
-      height: 'h-12'
-    }
+    name: 'Andover'
   },
   EK: {
-    name: 'Elk River',
-    logo: {
-      src: '/elk_river.png',
-      width: 'w-auto',
-      height: 'h-8'
-    }
+    name: 'Elk River'
   },
   IRONDALE: {
-    name: 'Irondale',
-    logo: {
-      src: '/irondale.png',
-      width: 'w-auto',
-      height: 'h-12'
-    }
+    name: 'Irondale'
   },
   MV: {
-    name: 'Mounds View',
-    logo: {
-      src: '/mv.png',
-      width: 'w-auto',
-      height: 'h-12'
-    }
+    name: 'Mounds View'
   },
   CENTENNIAL: {
-    name: 'Centennial',
-    logo: {
-      src: '/centennial.png',
-      width: 'w-auto',
-      height: 'h-12'
-    }
+    name: 'Centennial'
   },
   ROSEVILLE: {
-    name: 'Roseville',
-    logo: {
-      src: '/roseville.png',
-      width: 'w-auto',
-      height: 'h-12'
-    }
+    name: 'Roseville'
   },
   CR: {
-    name: 'Coon Rapids',
-    logo: {
-      src: '/coon_rapids.png',
-      width: 'w-auto',
-      height: 'h-12'
-    }
+    name: 'Coon Rapids'
   },
   MINNETONKA: {
-    name: 'Minnetonka',
-    logo: {
-      src: '/minnetonka.png',
-      width: 'w-auto',
-      height: 'h-10'
-    }
+    name: 'Minnetonka'
   },
   SLP: {
-    name: 'Spring Lake Park',
-    logo: {
-      src: '/slp.png',
-      width: 'w-auto',
-      height: 'h-12'
-    }
+    name: 'Spring Lake Park'
   },
   TG: {
-    name: 'Totino-Grace',
-    logo: {
-      src: '/totino_grace.png',
-      width: 'w-auto',
-      height: 'h-12'
-    }
+    name: 'Totino-Grace'
+  },
+  FL: {
+    name: 'Forest Lake'
+  },
+  HAMLINE: {
+    name: 'Hamline'
   }
 })
