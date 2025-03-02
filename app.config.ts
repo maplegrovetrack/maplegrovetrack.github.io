@@ -13,6 +13,7 @@ const gitHub = {
 }
 
 export default defineAppConfig({
+  teamAppContextRoot: 'https://mgtf.teamapp.com/clubs/397955',
   seo: {
     siteName: 'Maple Grove Track & Field'
   },

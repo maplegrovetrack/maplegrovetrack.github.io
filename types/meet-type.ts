@@ -6,17 +6,22 @@ export enum MeetType {
   ALL = 'Full Team'
 }
 
-export type Transport = 'N/A' | 'TBD'
+export type Transport = 'N/A'
+  | 'TBD'
+  | 'To the meet only'
+  | 'From the meet only'
+  | 'To and from the meet'
+  | 'Athletes must find a ride'
 
 export type Meet = {
   id: string,
   name: string,
   date: Date,
   location?: School,
-  schools: School[],
   type: MeetType,
   transport: Transport,
-  notes?: string,
+  teamAppLink: string,
+  notes?: string[],
   start?: {
     hour: string,
     minute: string,
@@ -28,3 +33,5 @@ export type Meet = {
     meridiem: string
   }
 }
+
+export type ArchivedMeet = Partial<Meet> & {}

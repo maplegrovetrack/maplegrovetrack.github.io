@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!--    <SharedCalendar :attributes="attributes" />-->
     <div v-for="meet in meets" :key="meet.id">
       <ProseH2 :id="meet.id">
         {{ meet.name }}
@@ -26,9 +25,6 @@
               <UIcon name="i-heroicons-map-pin" class="w-5 h-5" />
               <div class="flex items-center">
                 <div>{{ meet.location?.name || 'TBD' }}</div>
-                <div v-if="meet.location" class="flex items-center ml-1">
-                  <img class="not-prose w-auto h-6" :src="meet.location.logo.src" :alt="meet.location.name">
-                </div>
               </div>
             </div>
           </div>
@@ -45,6 +41,14 @@
                 {{ meet.transport }}
               </div>
             </div>
+            <div class="flex items-center gap-2">
+              <UIcon name="i-fluent-mdl2-unstack-selected" class="w-5 h-5" />
+              <div class="flex items-center">
+                <a :href="app.teamAppContextRoot + '/events' + meet.teamAppLink" target="_blank">
+                  Team App event
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         <UDivider class="my-4" :ui="dividerUi">
@@ -56,32 +60,14 @@
           </div>
         </UDivider>
         <div class="space-y-3">
-          {{ meet.notes || 'No additional information.' }}
-        </div>
-        <UDivider class="my-4" :ui="dividerUi">
-          <div class="flex items-center gap-2">
-            <UIcon name="i-heroicons-academic-cap" class="w-5 h-5" />
-            <div>
-              Schools
+          <template v-if="meet.notes && meet.notes.length > 0">
+            <div v-for="(note, index) in meet.notes" :key="index">
+              {{ note }}
             </div>
-          </div>
-        </UDivider>
-        <div v-if="meet.schools.length > 0" class="grid grid-cols-2 gap-x-3">
-          <div
-            v-for="(school, index) in meet.schools"
-            :key="index"
-            class="flex justify-between items-center space-y-1 h-16 w-full"
-          >
-            <div>{{ school.name }}</div>
-            <img
-              :class="[ 'not-prose', school.logo.width, school.logo.height]"
-              :src="school.logo.src"
-              :alt="school.name"
-            >
-          </div>
-        </div>
-        <div v-else class="flex items-center">
-          TBD
+          </template>
+          <template v-else>
+            No additional information.
+          </template>
         </div>
       </Callout>
     </div>
@@ -93,6 +79,7 @@ import { DateTime } from 'luxon'
 import type { Meet } from '~/types/meet-type'
 
 const store = useAppStore()
+const app = useAppConfig()
 const meets = store.meets
 
 const dividerUi = {
@@ -100,18 +87,6 @@ const dividerUi = {
     base: 'block not-prose border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800'
   }
 }
-
-// const attributes = ref([
-//   {
-//     key: 'today',
-//     highlight: true,
-//     dates: new Date(),
-//   },
-//   ...store.meets.map((meet: Meet) => ({
-//     highlight: true,
-//     dates: meet.date,
-//   }))
-// ])
 
 store.tocLinks = store.meets.map((meet: Meet) => ({
   id: meet.id,
