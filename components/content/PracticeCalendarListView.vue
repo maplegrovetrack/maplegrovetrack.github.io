@@ -16,7 +16,7 @@
         <h3>
           {{ DateTime.fromISO(day).toLocaleString(DateTime.DATE_HUGE) }}
         </h3>
-        <div v-for="practice in dayGrouping" :key="practice.key">
+        <div v-for="practice in dayGrouping" :key="practice.id">
           <PracticeCallout :practice="practice" />
         </div>
       </div>

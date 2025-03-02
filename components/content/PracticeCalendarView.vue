@@ -7,7 +7,7 @@
     <div v-if="practices.length < 1">
       There are no practices for {{ DateTime.fromJSDate(selectedDate).toLocaleString(DateTime.DATE_HUGE) }}.
     </div>
-    <div v-for="practice in practices" :key="practice.key">
+    <div v-for="practice in practices" :key="practice.id">
       <PracticeCallout :practice="practice" />
     </div>
   </div>
