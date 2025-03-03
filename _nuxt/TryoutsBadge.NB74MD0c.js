@@ -1,0 +1,1 @@
+import{_ as e,E as o,G as c}from"./entry.Lu3NaGaJ.js";const n={},t={class:"flex h-4 w-4 bg-yellow-500 ml-2 rounded-full"};function _(s,r){return o(),c("div",t)}const a=e(n,[["render",_]]);export{a as default};
