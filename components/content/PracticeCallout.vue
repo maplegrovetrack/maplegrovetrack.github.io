@@ -19,7 +19,8 @@
       </div>
       <div class="space-y-3">
         <WeightRoomCallout v-if="useIsWeightRoom(practice.type)" />
-        <TrackPracticeCallout v-if="useIsTrackPractice(practice.type)" />
+        <VarsityPracticeCallout v-if="useIsVarsityPractice(practice.type)" />
+        <JVPracticeCallout v-if="useIsJvPractice(practice.type)" />
         <TryoutsCallout v-if="useIsTryoutPractice(practice.type)" />
         <SpringBreakPracticeCallout v-if="useIsSpringBreakPractice(practice.type)" />
         <OptionalPracticeCallout v-if="useIsOptionalPractice(practice.type)" />
@@ -32,11 +33,12 @@
 import { DateTime } from 'luxon'
 import type { Practice } from '~/types/practice-type'
 import { useIsWeightRoom } from '~/composables/practices/use-is-weight-room'
-import { useIsTrackPractice } from '~/composables/practices/use-is-track-practice'
+import { useIsVarsityPractice } from '~/composables/practices/use-is-varsity-practice'
+import { useIsJvPractice } from '~/composables/practices/use-is-jv-practice'
 import { useIsTryoutPractice } from '~/composables/practices/use-is-tryout-practice'
 import { useIsSpringBreakPractice } from '~/composables/practices/use-is-spring-break-practice'
-import SpringBreakPracticeCallout from '~/components/content/SpringBreakPracticeCallout.vue'
 import { useIsOptionalPractice } from '~/composables/practices/use-is-optional-practice'
+import SpringBreakPracticeCallout from '~/components/content/SpringBreakPracticeCallout.vue'
 
 defineProps<{ practice: Practice }>()
 </script>

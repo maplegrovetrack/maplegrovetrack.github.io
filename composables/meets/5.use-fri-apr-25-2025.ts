@@ -11,7 +11,7 @@ export const useFriApr252025 = (): Meet => {
     name: 'Hamline Elite Meet',
     date: useDate(2025, 4, 25),
     location: schools.HAMLINE,
-    type: MeetType.JV,
+    type: MeetType.VARSITY,
     transport: 'To and from the meet',
     notes: [
       'This meet is by qualification only. Invites will be determined Wednesday or Thursday the week of 4/23.',

@@ -22,10 +22,11 @@ import type { Practice } from '~/types/practice-type'
 import { useWeightRoomCalendar } from '~/composables/practices/use-weight-room-calendar'
 import { usePracticesStore } from '~/composables/practices/use-practices-store'
 import { usePracticesSchedule } from '~/composables/practices/use-practices-schedule'
-import { useTrackPracticesCalendar } from '~/composables/practices/use-track-practices-calendar'
+import { useVarsityPracticesCalendar } from '~/composables/practices/use-varsity-practices-calendar'
 import { useTryoutsCalendar } from '~/composables/practices/use-tryouts-calendar'
 import { useSpringBreakPracticesCalendar } from '~/composables/practices/use-spring-break-practices-calendar'
 import { useOptionalPracticesCalendar } from '~/composables/practices/use-optional-practices-calendar'
+import { useJvPracticesCalendar } from '~/composables/practices/use-jv-practices-calendar'
 
 const store = usePracticesStore()
 const nowDateTime = DateTime.now().startOf('day')
@@ -48,27 +49,31 @@ const attributes: ComputedRef<AttributeConfig[]> = computed(() => [
     },
     dates: selectedDate.value
   }),
-  (store.weightRoom && useWeightRoomCalendar()),
-  (store.trackPractices && useTrackPracticesCalendar()),
   (store.tryouts && useTryoutsCalendar()),
   (store.springBreak && useSpringBreakPracticesCalendar()),
-  (store.optional && useOptionalPracticesCalendar())
+  (store.varsityPractices && useVarsityPracticesCalendar()),
+  (store.jvPractices && useJvPracticesCalendar()),
+  (store.optional && useOptionalPracticesCalendar()),
+  (store.weightRoom && useWeightRoomCalendar())
 ])
 
 const practices: ComputedRef<Practice[]> = computed(() => [
-  ...(store.weightRoom ? schedules.WEIGHT_ROOM : []).filter((practice) => {
-    return DateTime.fromJSDate(practice.date).startOf('day').equals(DateTime.fromJSDate(selectedDate.value))
-  }),
-  ...(store.trackPractices ? schedules.TRACK : []).filter((practice) => {
-    return DateTime.fromJSDate(practice.date).startOf('day').equals(DateTime.fromJSDate(selectedDate.value))
-  }),
   ...(store.tryouts ? schedules.TRYOUTS : []).filter((practice) => {
     return DateTime.fromJSDate(practice.date).startOf('day').equals(DateTime.fromJSDate(selectedDate.value))
   }),
   ...(store.springBreak ? schedules.SPRING_BREAK : []).filter((practice) => {
     return DateTime.fromJSDate(practice.date).startOf('day').equals(DateTime.fromJSDate(selectedDate.value))
   }),
+  ...(store.varsityPractices ? schedules.VARSITY : []).filter((practice) => {
+    return DateTime.fromJSDate(practice.date).startOf('day').equals(DateTime.fromJSDate(selectedDate.value))
+  }),
+  ...(store.jvPractices ? schedules.JV : []).filter((practice) => {
+    return DateTime.fromJSDate(practice.date).startOf('day').equals(DateTime.fromJSDate(selectedDate.value))
+  }),
   ...(store.optional ? schedules.OPTIONAL : []).filter((practice) => {
+    return DateTime.fromJSDate(practice.date).startOf('day').equals(DateTime.fromJSDate(selectedDate.value))
+  }),
+  ...(store.weightRoom ? schedules.WEIGHT_ROOM : []).filter((practice) => {
     return DateTime.fromJSDate(practice.date).startOf('day').equals(DateTime.fromJSDate(selectedDate.value))
   })
 ])
