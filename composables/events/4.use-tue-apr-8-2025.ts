@@ -10,7 +10,7 @@ export const useTueApr82025Event = (): Event => ({
   notes: [
     'The MGTF Booster Club is hosting a Community Sponsor Night in conjunction with Hometowne Pizza on 4/8/2025.',
     'Invite friends & family to order as Hometowne Pizza will be donating 10% of all sales from 11am-8pm.',
-    'Unlike other sports teams, we don’t require fundraising, but hope you will share the attached Community Sponsor Night flyer (in stack team app) on social media, text, or email.',
+    'Unlike other sports teams, we don’t require fundraising, but hope you will share the attached Community Sponsor Night flyer (in stack team app) on social media, text, or email.'
   ],
   start: {
     hour: '5',
