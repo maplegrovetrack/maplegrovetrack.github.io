@@ -41,14 +41,6 @@ const dividerUi = {
 }
 
 const practices: ComputedRef<Practice[]> = computed(() => [
-  ...(store.weightRoom ? schedules.WEIGHT_ROOM : []).filter((practice) => {
-    const practiceDay = DateTime.fromJSDate(practice.date).startOf('day')
-    return nowDateTime.equals(practiceDay) || practiceDay > DateTime.now().startOf('day')
-  }),
-  ...(store.trackPractices ? schedules.TRACK : []).filter((practice) => {
-    const practiceDay = DateTime.fromJSDate(practice.date).startOf('day')
-    return nowDateTime.equals(practiceDay) || practiceDay > DateTime.now().startOf('day')
-  }),
   ...(store.tryouts ? schedules.TRYOUTS : []).filter((practice) => {
     const practiceDay = DateTime.fromJSDate(practice.date).startOf('day')
     return nowDateTime.equals(practiceDay) || practiceDay > DateTime.now().startOf('day')
@@ -57,7 +49,19 @@ const practices: ComputedRef<Practice[]> = computed(() => [
     const practiceDay = DateTime.fromJSDate(practice.date).startOf('day')
     return nowDateTime.equals(practiceDay) || practiceDay > DateTime.now().startOf('day')
   }),
+  ...(store.varsityPractices ? schedules.VARSITY : []).filter((practice) => {
+    const practiceDay = DateTime.fromJSDate(practice.date).startOf('day')
+    return nowDateTime.equals(practiceDay) || practiceDay > DateTime.now().startOf('day')
+  }),
+  ...(store.jvPractices ? schedules.JV : []).filter((practice) => {
+    const practiceDay = DateTime.fromJSDate(practice.date).startOf('day')
+    return nowDateTime.equals(practiceDay) || practiceDay > DateTime.now().startOf('day')
+  }),
   ...(store.optional ? schedules.OPTIONAL : []).filter((practice) => {
+    const practiceDay = DateTime.fromJSDate(practice.date).startOf('day')
+    return nowDateTime.equals(practiceDay) || practiceDay > DateTime.now().startOf('day')
+  }),
+  ...(store.weightRoom ? schedules.WEIGHT_ROOM : []).filter((practice) => {
     const practiceDay = DateTime.fromJSDate(practice.date).startOf('day')
     return nowDateTime.equals(practiceDay) || practiceDay > DateTime.now().startOf('day')
   })

@@ -1,4 +1,4 @@
-export type PracticeType = 'WEIGHT_ROOM' | 'TRACK' | 'SPRING_BREAK' | 'TRYOUTS' | 'OPTIONAL'
+export type PracticeType = 'WEIGHT_ROOM' | 'VARSITY' | 'JV' | 'SPRING_BREAK' | 'TRYOUTS' | 'OPTIONAL'
 export type PracticeIcon = 'fluent-mdl2-weights'
 
 export type Practice = {
