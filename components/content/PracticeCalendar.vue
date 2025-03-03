@@ -41,8 +41,6 @@
 
 <script setup lang="ts">
 import { usePracticesStore } from '~/composables/practices/use-practices-store'
-import SpringBreakPracticesBadge from '~/components/content/SpringBreakPracticesBadge.vue'
-import OptionalPracticesBadge from '~/components/content/OptionalPracticesBadge.vue'
 
 const store = usePracticesStore()
 </script>
