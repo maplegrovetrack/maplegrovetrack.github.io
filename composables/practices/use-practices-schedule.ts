@@ -4,6 +4,9 @@ import { useWeightRoomSchedule } from '~/composables/practices/use-weight-room-s
 import { useMeetSchedule } from '~/composables/use-meet-schedule'
 import { MeetType } from '~/types/meet-type'
 import { useSchools } from '~/composables/use-schools'
+import { useIsSpringBreakDay } from '~/composables/practices/use-is-spring-break-day'
+import { useIsTryoutDay } from '~/composables/practices/use-is-tryout-day'
+import { useIsJvDone } from '~/composables/practices/use-is-jv-done'
 
 export const usePracticesSchedule = (): Record<PracticeType, Array<Practice>> => {
   const firstPractice = DateTime.local(2025, 3, 10, 0, 0, { zone: 'America/Chicago' })
@@ -16,7 +19,7 @@ export const usePracticesSchedule = (): Record<PracticeType, Array<Practice>> =>
   return {
     // Get only the first week of practice
     TRYOUTS: weekDays
-      .filter(day => day.month === 3 && day.day >= 10 && day.day <= 14)
+      .filter(day => useIsTryoutDay(day))
       .map((day) => {
         return {
           id: `tryout-${day.toISODate({ format: 'basic' })}`,
@@ -46,7 +49,7 @@ export const usePracticesSchedule = (): Record<PracticeType, Array<Practice>> =>
     WEIGHT_ROOM: useWeightRoomSchedule(),
     // Get the 3rd week in March
     SPRING_BREAK: weekDays
-      .filter(day => day.month === 3 && day.day >= 24 && day.day <= 28)
+      .filter(day => useIsSpringBreakDay(day))
       .map((day) => {
         return {
           id: `spring-break-${day.toISODate({ format: 'basic' })}`,
@@ -58,20 +61,25 @@ export const usePracticesSchedule = (): Record<PracticeType, Array<Practice>> =>
     JV: weekDays
       .filter((day) => {
         // ignore tryouts
-        if (day.month === 3 && day.day >= 10 && day.day <= 14) {
+        if (useIsTryoutDay(day)) {
           return false
         }
         // ignore spring break
-        if (day.month === 3 && day.day >= 24 && day.day <= 28) {
+        if (useIsSpringBreakDay(day)) {
           return false
         }
         // ignore after last JV meet
-        if (day.month === 5 && day.day > 15) {
+        if (useIsJvDone(day)) {
           return false
         }
-        // ignore jv meet days for jv practice
+        // ignore jv meet days for jv practice, ingore Osseo 10th grade and under meet
         const jvMeets = meetSchedule
-          .filter(meet => meet.type === MeetType.JV || meet.type === MeetType.ALL)
+          .filter((meet) => {
+            if (meet.id === '__4-30-2025__') {
+              return false
+            }
+            return meet.type === MeetType.JV || meet.type === MeetType.ALL
+          })
           .map(meet => DateTime.fromJSDate(meet.date, { zone: 'America/Chicago' }).startOf('day'))
         return !jvMeets.find(meet => meet.equals(day.startOf('day')))
       })
@@ -92,15 +100,15 @@ export const usePracticesSchedule = (): Record<PracticeType, Array<Practice>> =>
           type: 'JV'
         }
       }),
-    // JV practice will run M-F until the section meet
+    // varsity practice will run M-F until the section meet
     VARSITY: weekDays
       .filter((day) => {
         // ignore tryouts
-        if (day.month === 3 && day.day >= 10 && day.day <= 14) {
+        if (useIsTryoutDay(day)) {
           return false
         }
         // ignore spring break
-        if (day.month === 3 && day.day >= 24 && day.day <= 28) {
+        if (useIsSpringBreakDay(day)) {
           return false
         }
         // ignore varsity meet days for varsity practice, but ignore Hamline Elite Meet
