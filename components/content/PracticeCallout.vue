@@ -38,7 +38,6 @@ import { useIsJvPractice } from '~/composables/practices/use-is-jv-practice'
 import { useIsTryoutPractice } from '~/composables/practices/use-is-tryout-practice'
 import { useIsSpringBreakPractice } from '~/composables/practices/use-is-spring-break-practice'
 import { useIsOptionalPractice } from '~/composables/practices/use-is-optional-practice'
-import SpringBreakPracticeCallout from '~/components/content/SpringBreakPracticeCallout.vue'
 
 defineProps<{ practice: Practice }>()
 </script>

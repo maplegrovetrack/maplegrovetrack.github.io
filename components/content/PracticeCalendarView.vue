@@ -40,14 +40,14 @@ const attributes: ComputedRef<AttributeConfig[]> = computed(() => [
     highlight: {
       fillMode: 'solid'
     },
-    dates: now
+    dates: [now]
   },
   (!DateTime.fromJSDate(selectedDate.value).startOf('day').equals(nowDateTime) && {
     key: 'selected',
     highlight: {
       fillMode: 'outline'
     },
-    dates: selectedDate.value
+    dates: [selectedDate.value]
   }),
   (store.tryouts && useTryoutsCalendar()),
   (store.springBreak && useSpringBreakPracticesCalendar()),
