@@ -23,7 +23,7 @@ export default defineNuxtConfig({
   hooks: {
     // Define `@nuxt/ui` components as global to use them in `.md`
     'components:extend': (components: Component[]): void => {
-      const include: string[] = ['UAlert', 'ULandingCard']
+      const include: string[] = ['UAlert', 'ULandingCard', 'ULink']
       const globals: Component[] = components.filter(c => include.includes(c.pascalName))
 
       globals.forEach((c: Component) => {
