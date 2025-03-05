@@ -1,1 +1,0 @@
-import{_ as e,E as n,G as o}from"./entry.p4Fcgqd3.js";const c={},t={class:"flex h-4 w-4 bg-orange-500 ml-2 rounded-full"};function _(r,s){return n(),o("div",t)}const l=e(c,[["render",_]]);export{l as default};
