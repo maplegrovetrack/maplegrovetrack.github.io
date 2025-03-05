@@ -1,1 +1,0 @@
-{"id":"e474fb03-0ac5-48bd-b7b0-72cda7f171a8","timestamp":1741150165606,"matcher":{"static":{"/":null,"/api":null,"/api/search.json":{"prerender":true}},"wildcard":{},"dynamic":{}},"prerendered":["/","/team","/qualifying-standards","/order-of-events","/records","/schedules/events","/schedules/meets","/registration","/schedules/practices"]}

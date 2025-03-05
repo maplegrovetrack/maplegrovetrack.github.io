@@ -1,1 +1,0 @@
-import{_ as e,E as c,G as n}from"./entry.HKgYgPPC.js";const o={},t={class:"flex h-4 w-4 bg-red-500 ml-2 rounded-full"};function _(r,s){return c(),n("div",t)}const l=e(o,[["render",_]]);export{l as default};
