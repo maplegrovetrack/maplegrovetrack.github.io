@@ -1,60 +1,53 @@
-import type { Component } from '@nuxt/schema'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
+  modules: [
+    '@pinia/nuxt',
+    '@nuxt/ui',
+    '@nuxt/content',
+    '@nuxtjs/google-fonts',
+    'nuxt-og-image'
+  ],
+  devtools: {
+    enabled: true
+  },
+  css: [
+    './app/assets/css/main.css',
+    './app/assets/css/calendar.scss'
+  ],
+  site: {
+    url: 'https://maplegrovetrack.github.io'
+  },
   colorMode: {
     preference: 'system',
     fallback: 'dark'
   },
   content: {},
-  css: ['assets/calendar.scss'],
-  devtools: {
-    enabled: true
+  routeRules: {
+    '/api/search.json': {
+      prerender: true
+    }
   },
-  extends: [
-    '@nuxt/ui-pro'
-  ],
+  compatibilityDate: '2026-01-06',
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
+  },
+  vite: {
+    plugins: [
+      tailwindcss()
+    ]
+  },
+  typescript: {
+    strict: true,
+    typeCheck: true
+  },
   googleFonts: {
     display: 'swap',
     download: true,
     families: {
       'DM+Sans': [400, 500, 600, 700]
     }
-  },
-  hooks: {
-    // Define `@nuxt/ui` components as global to use them in `.md`
-    'components:extend': (components: Component[]): void => {
-      const include: string[] = ['UAlert', 'ULandingCard', 'ULink']
-      const globals: Component[] = components.filter(c => include.includes(c.pascalName))
-
-      globals.forEach((c: Component) => {
-        c.global = true
-      })
-    }
-  },
-  modules: [
-    '@pinia/nuxt',
-    '@nuxt/content',
-    '@nuxtjs/google-fonts',
-    '@nuxt/ui',
-    'nuxt-og-image'
-  ],
-  nitro: {
-    prerender: {
-      routes: ['/sitemap.xml']
-    }
-  },
-  routeRules: {
-    '/api/search.json': {
-      prerender: true
-    }
-  },
-  site: {
-    url: 'https://maplegrovetrack.github.io'
-  },
-  ui: {
-    icons: ['fluent-mdl2', 'heroicons', 'simple-icons', 'streamline', 'game-icons']
-  },
-  typescript: {
-    strict: false
   }
 })
