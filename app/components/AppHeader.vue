@@ -1,6 +1,6 @@
 <template>
   <UHeader>
-    <template #left>
+    <template #title>
       <template v-if="header?.logo?.dark || header?.logo?.light">
         <div class="flex items-center gap-2">
           <UColorModeImage v-bind="{ class: 'h-10 md:h-16 w-auto', ...header?.logo }" />
@@ -23,6 +23,7 @@
 
     <template #right>
       <UColorModeButton v-if="header?.colorMode" />
+      <!--  TODO: Replace with new team app <AppStackTeamAppLogo /> -->
 
       <template v-if="header?.links">
         <UButton

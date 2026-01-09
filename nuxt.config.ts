@@ -2,11 +2,13 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
   modules: [
+    '@nuxtjs/sitemap',
     '@pinia/nuxt',
     '@nuxt/ui',
-    '@nuxt/content',
     '@nuxtjs/google-fonts',
-    'nuxt-og-image'
+    'nuxt-og-image',
+    '@nuxtjs/robots',
+    '@nuxt/content'
   ],
   devtools: {
     enabled: true
@@ -16,13 +18,18 @@ export default defineNuxtConfig({
     './app/assets/css/calendar.scss'
   ],
   site: {
-    url: 'https://maplegrovetrack.github.io'
+    url: 'https://maplegrovetrack.github.io',
+    name: 'Maple Grove Track & Field Website'
   },
   colorMode: {
     preference: 'system',
     fallback: 'dark'
   },
-  content: {},
+  content: {
+    experimental: {
+      nativeSqlite: true
+    }
+  },
   routeRules: {
     '/api/search.json': {
       prerender: true
@@ -38,6 +45,11 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss()
     ]
+  },
+  typescript: {
+    strict: true,
+    typeCheck: true,
+    includeWorkspace: false
   },
   googleFonts: {
     display: 'swap',

@@ -1,7 +1,8 @@
 <template>
   <div class="w-full h-full flex justify-between relative p-[60px] bg-stone-900 text-gray-50">
     <div
-      class="flex absolute top-0" :style="{
+      class="flex absolute top-0"
+      :style="{
         width: '200%',
         height: '200%',
         backgroundImage: `radial-gradient(circle at 1350px 0px, rgba(125, 23, 23, 1) 1%, rgba(5, 5, 5, 0.5) 20%),

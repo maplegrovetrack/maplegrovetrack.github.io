@@ -1,5 +1,3 @@
-import type { School, SchoolKey } from '#shared/types/schools'
-
 export const useSchools = (): Record<SchoolKey, School> => ({
   MG: {
     name: 'Maple Grove'

@@ -1,4 +1,3 @@
-import { useAppStore } from '~/composables/use-app-store'
 import type { ContentNavigationItem } from '@nuxt/content'
 
 export const useNavigation = async (): Promise<ContentNavigationItem[]> => {

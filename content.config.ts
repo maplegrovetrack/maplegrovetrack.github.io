@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import { defineCollection, defineContentConfig } from '@nuxt/content'
+import { asSitemapCollection } from '@nuxtjs/sitemap/content'
 
 const Button = z.object({
   label: z.string(),
@@ -17,9 +18,9 @@ const Button = z.object({
 
 export default defineContentConfig({
   collections: {
-    site: defineCollection({
+    site: defineCollection(asSitemapCollection({
       type: 'page',
-      source: '**/*.md',
+      source: '**/*.{md,yml}',
       schema: z.object({
         navigation: z.object({
           title: z.string().optional(),
@@ -28,6 +29,6 @@ export default defineContentConfig({
         links: z.array(Button),
         toc: z.boolean().default(true)
       })
-    })
+    }))
   }
 })
