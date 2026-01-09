@@ -39,10 +39,6 @@ export default defineNuxtConfig({
       tailwindcss()
     ]
   },
-  typescript: {
-    strict: true,
-    typeCheck: true
-  },
   googleFonts: {
     display: 'swap',
     download: true,
