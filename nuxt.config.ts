@@ -57,5 +57,8 @@ export default defineNuxtConfig({
     families: {
       'DM+Sans': [400, 500, 600, 700]
     }
+  },
+  sitemap: {
+    zeroRuntime: true
   }
 })
