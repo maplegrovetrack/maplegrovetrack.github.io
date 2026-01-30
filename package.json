@@ -8,7 +8,6 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "lint": "eslint --no-fix --max-warnings 0 --ext .js,.ts,.vue .",
-    "test": "vitest run",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },

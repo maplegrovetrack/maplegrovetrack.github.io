@@ -19,7 +19,8 @@ export default defineNuxtConfig({
   ],
   site: {
     url: 'https://maplegrovetrack.github.io',
-    name: 'Maple Grove Track & Field Website'
+    name: 'Maple Grove Track & Field Website',
+    trailingSlash: true
   },
   colorMode: {
     preference: 'system',
@@ -44,7 +45,10 @@ export default defineNuxtConfig({
   vite: {
     plugins: [
       tailwindcss()
-    ]
+    ],
+    build: {
+      sourcemap: false
+    }
   },
   typescript: {
     strict: true,
