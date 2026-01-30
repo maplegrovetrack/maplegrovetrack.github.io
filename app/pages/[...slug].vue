@@ -47,7 +47,7 @@ store.tocLinks = page.value.body?.toc?.links || []
 const links = computed(() => [{
   icon: 'i-heroicons-pencil-square',
   label: 'Edit this page',
-  to: `${toc.bottom.edit}/${page?.value?.stem}`,
+  to: `${toc.bottom.edit}/${page?.value?.stem}.md`,
   target: '_blank'
 }])
 

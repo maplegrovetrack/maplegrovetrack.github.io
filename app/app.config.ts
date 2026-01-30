@@ -42,7 +42,7 @@ export default defineAppConfig({
     title: 'Table of Contents',
     bottom: {
       title: 'Community',
-      edit: 'https://github.com/maplegrovetrack/maplegrovetrack.github.io/edit/develop/content'
+      edit: 'https://github.com/maplegrovetrack/maplegrovetrack.github.io/edit/main/content'
     }
   }
 })
