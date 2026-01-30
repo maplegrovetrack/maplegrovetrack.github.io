@@ -2,6 +2,12 @@
 
 This repository generates the [Maple Grove Track & Field Website](https://maplegrovetrack.github.io/).
 
+<br>
+
+- - -
+
+<br>
+
 ## Nuxt framework
 
 This website is generate with Nuxt.
