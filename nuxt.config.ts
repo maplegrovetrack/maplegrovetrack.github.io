@@ -47,7 +47,22 @@ export default defineNuxtConfig({
       tailwindcss()
     ],
     build: {
-      sourcemap: false
+      sourcemap: false,
+      rollupOptions: {
+        output: {
+          manualChunks: (id) => {
+            if (id.includes('node_modules/luxon')) {
+              return 'luxon'
+            }
+            if (id.includes('node_modules/tailwind')) {
+              return 'tailwind'
+            }
+            if (id.includes('node_modules/reka-ui')) {
+              return 'reka-ui'
+            }
+          }
+        }
+      }
     }
   },
   typescript: {
