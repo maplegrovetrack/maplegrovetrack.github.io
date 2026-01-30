@@ -59,5 +59,5 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 <br>
 
-### Icons
+## Icons
 Search for icons here: https://icon-sets.iconify.design.
