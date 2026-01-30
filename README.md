@@ -1,6 +1,6 @@
 # Maple Grove Track & Field Website
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more for the framework used by this site.
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more for the framework used by this site.
 
 <br>
 
@@ -37,6 +37,12 @@ npm run dev
 <br>
 
 ## Production
+
+### Automated
+
+All merged pull requests to `main` branch will automatically deploy to github pages.
+
+### Manual
 
 Build the application for production:
 
