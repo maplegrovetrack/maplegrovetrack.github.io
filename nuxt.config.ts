@@ -8,7 +8,8 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     'nuxt-og-image',
     '@nuxtjs/robots',
-    '@nuxt/content'
+    '@nuxt/content',
+    'nuxt-github-pages'
   ],
   devtools: {
     enabled: true
@@ -40,7 +41,8 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: ['/sitemap.xml']
-    }
+    },
+    preset: 'github-pages'
   },
   vite: {
     plugins: [
