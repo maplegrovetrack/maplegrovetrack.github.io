@@ -1,6 +1,12 @@
 # Maple Grove Track & Field Website
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more for the framework used by this site.
+This repository generates the [Maple Grove Track & Field Website](https://maplegrovetrack.github.io/).
+
+## Nuxt framework
+
+This website is generate with Nuxt.
+
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 <br>
 
@@ -8,7 +14,7 @@ Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduct
 
 <br>
 
-## Setup
+### Setup
 
 Make sure to install the dependencies:
 
@@ -22,7 +28,7 @@ npm install
 
 <br>
 
-## Development Server
+### Development Server
 
 Start the development server on `http://localhost:3000`:
 
@@ -36,13 +42,13 @@ npm run dev
 
 <br>
 
-## Production
+### Production
 
-### Automated
+#### Automation
 
-All merged pull requests to `main` branch will automatically deploy to github pages.
+All merged pull requests to `main` branch will automatically be deployed to github pages.
 
-### Manual
+#### Manual
 
 Build the application for production:
 
@@ -71,5 +77,5 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 <br>
 
-## Icons
+### Icons
 Search for icons here: https://icon-sets.iconify.design.
