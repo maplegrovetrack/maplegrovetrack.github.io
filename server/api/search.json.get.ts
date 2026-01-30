@@ -1,7 +1,6 @@
 import type { H3Event } from 'h3'
-import { eventHandler } from 'h3'
-import { serverQueryContent } from '#content/server'
+import { queryCollectionSearchSections } from '@nuxt/content/server'
 
-export default eventHandler((event: H3Event) => {
-  return serverQueryContent(event).where({ _type: 'markdown', navigation: { $ne: false } }).find()
+export default defineEventHandler(async (event: H3Event) => {
+  return queryCollectionSearchSections(event, 'site')
 })

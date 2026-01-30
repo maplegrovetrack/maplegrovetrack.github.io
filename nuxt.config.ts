@@ -1,46 +1,33 @@
-import type { Component } from '@nuxt/schema'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
+  modules: [
+    '@nuxtjs/sitemap',
+    '@pinia/nuxt',
+    '@nuxt/ui',
+    '@nuxtjs/google-fonts',
+    'nuxt-og-image',
+    '@nuxtjs/robots',
+    '@nuxt/content'
+  ],
+  devtools: {
+    enabled: true
+  },
+  css: [
+    './app/assets/css/main.css',
+    './app/assets/css/calendar.scss'
+  ],
+  site: {
+    url: 'https://maplegrovetrack.github.io',
+    name: 'Maple Grove Track & Field Website'
+  },
   colorMode: {
     preference: 'system',
     fallback: 'dark'
   },
-  content: {},
-  css: ['assets/calendar.scss'],
-  devtools: {
-    enabled: true
-  },
-  extends: [
-    '@nuxt/ui-pro'
-  ],
-  googleFonts: {
-    display: 'swap',
-    download: true,
-    families: {
-      'DM+Sans': [400, 500, 600, 700]
-    }
-  },
-  hooks: {
-    // Define `@nuxt/ui` components as global to use them in `.md`
-    'components:extend': (components: Component[]): void => {
-      const include: string[] = ['UAlert', 'ULandingCard', 'ULink']
-      const globals: Component[] = components.filter(c => include.includes(c.pascalName))
-
-      globals.forEach((c: Component) => {
-        c.global = true
-      })
-    }
-  },
-  modules: [
-    '@pinia/nuxt',
-    '@nuxt/content',
-    '@nuxtjs/google-fonts',
-    '@nuxt/ui',
-    'nuxt-og-image'
-  ],
-  nitro: {
-    prerender: {
-      routes: ['/sitemap.xml']
+  content: {
+    experimental: {
+      nativeSqlite: true
     }
   },
   routeRules: {
@@ -48,13 +35,30 @@ export default defineNuxtConfig({
       prerender: true
     }
   },
-  site: {
-    url: 'https://maplegrovetrack.github.io'
+  compatibilityDate: '2026-01-06',
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
   },
-  ui: {
-    icons: ['fluent-mdl2', 'heroicons', 'simple-icons', 'streamline', 'game-icons']
+  vite: {
+    plugins: [
+      tailwindcss()
+    ]
   },
   typescript: {
-    strict: false
+    strict: true,
+    typeCheck: true,
+    includeWorkspace: false
+  },
+  googleFonts: {
+    display: 'swap',
+    download: true,
+    families: {
+      'DM+Sans': [400, 500, 600, 700]
+    }
+  },
+  sitemap: {
+    zeroRuntime: true
   }
 })
