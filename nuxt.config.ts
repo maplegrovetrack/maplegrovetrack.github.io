@@ -8,7 +8,8 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     'nuxt-og-image',
     '@nuxtjs/robots',
-    '@nuxt/content'
+    '@nuxt/content',
+    'nuxt-github-pages'
   ],
   devtools: {
     enabled: true
