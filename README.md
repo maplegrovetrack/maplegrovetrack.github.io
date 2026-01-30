@@ -4,19 +4,11 @@ This repository generates the [Maple Grove Track & Field Website](https://mapleg
 
 <br>
 
-- - -
-
-<br>
-
 ## Nuxt framework
 
 This website is generate with Nuxt.
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-<br>
-
-- - -
 
 <br>
 
@@ -30,10 +22,6 @@ npm install
 
 <br>
 
-- - -
-
-<br>
-
 ### Development Server
 
 Start the development server on `http://localhost:3000`:
@@ -41,10 +29,6 @@ Start the development server on `http://localhost:3000`:
 ```bash
 npm run dev
 ```
-
-<br>
-
-- - -
 
 <br>
 
@@ -71,15 +55,7 @@ npm run deploy
 
 <br>
 
-- - -
-
-<br>
-
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
-<br>
-
-- - -
 
 <br>
 
