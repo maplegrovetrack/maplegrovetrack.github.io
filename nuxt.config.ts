@@ -8,8 +8,7 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     'nuxt-og-image',
     '@nuxtjs/robots',
-    '@nuxt/content',
-    'nuxt-github-pages'
+    '@nuxt/content'
   ],
   devtools: {
     enabled: true
@@ -20,8 +19,7 @@ export default defineNuxtConfig({
   ],
   site: {
     url: 'https://maplegrovetrack.github.io',
-    name: 'Maple Grove Track & Field Website',
-    trailingSlash: true
+    name: 'Maple Grove Track & Field Website'
   },
   colorMode: {
     preference: 'system',
