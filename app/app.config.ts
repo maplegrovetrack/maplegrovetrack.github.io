@@ -12,8 +12,14 @@ const gitHub = {
   'aria-label': 'Maple Grove Track & Field website on GitHub'
 }
 
+const instagram = {
+  icon: 'i-simple-icons-instagram',
+  to: 'https://www.instagram.com/mgtrackandfield',
+  target: '_blank',
+  'aria-label': 'Maple Grove Track & Field on Instagram'
+}
+
 export default defineAppConfig({
-  teamAppContextRoot: 'https://mgtf.teamapp.com/clubs/397955',
   seo: {
     siteName: 'Maple Grove Track & Field'
   },
@@ -31,12 +37,12 @@ export default defineAppConfig({
     },
     search: true,
     colorMode: true,
-    links: [x, gitHub]
+    links: [x, instagram, gitHub]
   },
   footer: {
     credits: `Copyright © ${new Date().getFullYear()}`,
     colorMode: true,
-    links: [x, gitHub]
+    links: [x, instagram, gitHub]
   },
   toc: {
     title: 'Table of Contents',
