@@ -14,7 +14,7 @@
     <ClientOnly>
       <LazyUContentSearch
         :files="files"
-        :navigation="navigation"
+        :navigation="nav"
       />
     </ClientOnly>
   </UApp>
@@ -23,7 +23,8 @@
 <script setup lang="ts">
 import type { ContentNavigationItem } from '@nuxt/content'
 
-const navigation: ContentNavigationItem[] = await useNavigation()
+const navigation: ContentNavigationItem[] = await queryCollectionNavigation('site')
+const nav = [{ title: 'Site', path: '/', stem: '0.index', children: navigation }]
 const { data: files } = await useLazyFetch('/api/search.json', {
   default: () => [],
   server: false
