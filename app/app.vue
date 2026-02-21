@@ -14,7 +14,7 @@
     <ClientOnly>
       <LazyUContentSearch
         :files="files"
-        :navigation="navigation"
+        :navigation="nav"
       />
     </ClientOnly>
   </UApp>
@@ -23,7 +23,13 @@
 <script setup lang="ts">
 import type { ContentNavigationItem } from '@nuxt/content'
 
-const navigation: ContentNavigationItem[] = await useNavigation()
+const navigation: ContentNavigationItem[] = await queryCollectionNavigation('site')
+// For some reason adding directories removes the root pages from search results.
+// Below setup is a workaround to show root pages in the search results.
+const nav = [
+  { title: '', path: '/', stem: '0.index', children: navigation.filter(nav => nav && !nav.children) },
+  ...navigation.filter(nav => nav && nav.children)
+]
 const { data: files } = await useLazyFetch('/api/search.json', {
   default: () => [],
   server: false
