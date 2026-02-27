@@ -20,7 +20,7 @@ export default defineContentConfig({
   collections: {
     site: defineCollection(asSitemapCollection({
       type: 'page',
-      source: '**/*.md',
+      source: '**',
       schema: z.object({
         navigation: z.object({
           title: z.string().optional(),
