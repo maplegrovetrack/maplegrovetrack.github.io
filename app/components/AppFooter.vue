@@ -6,7 +6,7 @@
 
     <template #right>
       <UColorModeButton v-if="footer?.colorMode" />
-      <!--  TODO: Replace with new team app <AppStackTeamAppLogo /> -->
+      <AppHelloTeamLogo />
 
       <template v-if="footer?.links">
         <UButton

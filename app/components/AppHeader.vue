@@ -23,7 +23,7 @@
 
     <template #right>
       <UColorModeButton v-if="header?.colorMode" />
-      <!--  TODO: Replace with new team app <AppStackTeamAppLogo /> -->
+      <AppHelloTeamLogo />
 
       <template v-if="header?.links">
         <UButton
