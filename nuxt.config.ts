@@ -18,6 +18,11 @@ export default defineNuxtConfig({
     './app/assets/css/main.css',
     './app/assets/css/calendar.scss'
   ],
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag: string): boolean => tag.startsWith('add-')
+    }
+  },
   site: {
     url: 'https://maplegrovetrack.github.io',
     name: 'Maple Grove Track & Field Website'
