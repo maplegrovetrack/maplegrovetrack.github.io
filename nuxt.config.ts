@@ -80,5 +80,10 @@ export default defineNuxtConfig({
   },
   sitemap: {
     zeroRuntime: true
+  },
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag: string): boolean => tag.startsWith('add-')
+    }
   }
 })
