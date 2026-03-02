@@ -1,18 +1,19 @@
 <template>
-  <!-- @vue-ignore -->
-  <add-to-calendar-button
-    name="Maple Grove Track & Field ICS File"
-    time-zone="America/Chicago"
-    ics-file="https://maplegrovetrack.github.io/ics/calendar.ics"
-    subscribe
-    options="'Apple','Google','iCal','Outlook.com','Yahoo','Microsoft365'"
-    light-mode="system"
-    hide-checkmark
-    hide-background
-    trigger="click"
-  />
+  <add-to-calendar-button v-bind="props" />
 </template>
 
 <script lang="ts" setup>
 import 'add-to-calendar-button'
+
+const props = {
+  name: 'Maple Grove Track & Field ICS File',
+  timeZone: 'America/Chicago',
+  icsFile: 'https://maplegrovetrack.github.io/ics/calendar.ics',
+  subscribe: true,
+  options: '\'Apple\',\'Google\',\'iCal\',\'Outlook.com\',\'Yahoo\',\'Microsoft365\'',
+  lightMode: 'system',
+  hideCheckmark: true,
+  hideBackground: true,
+  trigger: 'click'
+}
 </script>
