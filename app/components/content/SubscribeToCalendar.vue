@@ -7,6 +7,7 @@ import 'add-to-calendar-button'
 
 const props = {
   name: 'Maple Grove Track & Field ICS File',
+  label: 'Click Here to Sync Calendar',
   timeZone: 'America/Chicago',
   icsFile: 'https://maplegrovetrack.github.io/ics/calendar.ics',
   subscribe: true,
