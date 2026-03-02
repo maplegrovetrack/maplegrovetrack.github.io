@@ -1,15 +1,16 @@
 <template>
+  <!-- @vue-ignore -->
   <add-to-calendar-button
     name="Maple Grove Track & Field ICS File"
-    timeZone="America/Chicago"
-    icsFile="https://maplegrovetrack.github.io/ics/calendar.ics"
+    time-zone="America/Chicago"
+    ics-file="https://maplegrovetrack.github.io/ics/calendar.ics"
     subscribe
     options="'Apple','Google','iCal','Outlook.com','Yahoo','Microsoft365'"
-    lightMode="system"
-    hideCheckmark
-    hideBackground
+    light-mode="system"
+    hide-checkmark
+    hide-background
     trigger="click"
-  ></add-to-calendar-button>
+  />
 </template>
 
 <script lang="ts" setup>
