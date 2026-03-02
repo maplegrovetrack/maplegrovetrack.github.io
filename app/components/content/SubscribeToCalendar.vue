@@ -1,12 +1,14 @@
 <template>
   <add-to-calendar-button
-    name="Test"
+    name="Maple Grove Track & Field ICS File"
     timeZone="America/Chicago"
-    location="World Wide Web"
     icsFile="https://maplegrovetrack.github.io/ics/calendar.ics"
     subscribe
     options="'Apple','Google','iCal','Outlook.com','Yahoo','Microsoft365'"
     lightMode="system"
+    hideCheckmark
+    hideBackground
+    trigger="click"
   ></add-to-calendar-button>
 </template>
 
