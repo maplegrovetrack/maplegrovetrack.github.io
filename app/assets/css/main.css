@@ -3,7 +3,15 @@
 
 @source "../../../content/**/*";
 
+.mgtf-page-logos-override {
+    height: 175px;
+    width: auto;
+    background-color: white;
+    overflow: hidden;
+}
+
 @theme static {
+    --mgtf-logo-height: 500px;
     --font-sans: 'DM Sans', 'DM Sans fallback', sans-serif;
 
     --color-green-50: #EFFDF5;
