@@ -3,6 +3,13 @@
 
 @source "../../../content/**/*";
 
+.mgtf-page-logos-override {
+    height: 175px;
+    width: auto;
+    background-color: white;
+    overflow: hidden;
+}
+
 @theme static {
     --font-sans: 'DM Sans', 'DM Sans fallback', sans-serif;
 
